@@ -1,93 +1,111 @@
-# floori
+# 🖤 SanityPress
 
+> _Ready, Set, Impress._
 
+An opinionated, fully customizable Next.js (App Router) and Sanity starter template with Tailwind CSS and pre-built schema for rapid website development.
 
-## Getting started
+[Demo](https://sanitypress.dev) | [Docs](https://sanitypress.dev/docs) | [Blog](https://sanitypress.dev/blog) | [Modules](https://sanitypress.dev/docs/modules) | [Studio screenshots](https://sanitypress.dev/studio-screenshots) | [Sanity.io](https://www.sanity.io/templates/sanitypress)
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
-
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
-
-## Add your files
-
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/topics/git/add_files/#add-files-to-a-git-repository) or push an existing Git repository with the following command:
-
-```
-cd existing_repo
-git remote add origin https://gitlab.com/portofolios1/floori.git
-git branch -M main
-git push -uf origin main
+```sh
+npm create sanity@latest -- --template nuotsu/sanitypress
 ```
 
-## Integrate with your tools
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fnuotsu%2Fsanitypress&env=NEXT_PUBLIC_BASE_URL,NEXT_PUBLIC_SANITY_PROJECT_ID,NEXT_PUBLIC_SANITY_DATASET,SANITY_API_READ_TOKEN&envDescription=Values%20needed%20to%20connect%20a%20Sanity%20CMS&envLink=https%3A%2F%2Fsanitypress.dev%2Fdocs%2Fgetting-started&demo-title=SanityPress&demo-description=Official%20website%20and%20blog%20for%20SanityPress%2C%20built%20with%20SanityPress&demo-url=https%3A%2F%2Fsanitypress.dev&demo-image=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Felyfelq1%2Fproduction%2F7fb61a2b110f509582f0f43cb1e397f8fa9e5c07-2814x1798.png%3Fw%3D1600)
 
-- [ ] [Set up project integrations](https://gitlab.com/portofolios1/floori/-/settings/integrations)
+![](https://cdn.sanity.io/images/elyfelq1/production/a0fee34f50f6dadca1d8fed050431b60356f418c-2228x1114.png)
 
-## Collaborate with your team
+## Key Features
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/user/project/merge_requests/auto_merge/)
+- [x] ✨ Next.js 15 (App Router, RSC, Typescript) with Tailwind 4
+- [x] 📕 [Pre-configured Sanity schema](/src/sanity/schemaTypes/index.ts) & [frontend components](/src/ui/)
+- [x] ✏️ [Visual editing](https://sanitypress.dev/blog/visual-editing) in an [embedded Sanity Studio](https://sanitypress.dev/blog/why-you-should-embed-your-studio)
+- [x] ⌨️ Auto-generated [sitemap](https://sanitypress.dev/sitemap.xml) + [Blog RSS feed](https://sanitypress.dev/blog/rss.xml)
+- [x] ⚡ [Perfect Lighthouse scores](https://sanitypress.dev/blog/how-fast-is-sanitypress) on desktop and mobile.
 
-## Test and Deploy
+## Getting Started
 
-Use the built-in continuous integration in GitLab.
+Full instructions on the [docs](https://sanitypress.dev/docs).
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+### 1. Install with the Sanity CLI
 
-***
+Run the following command to initialize this template on your local computer.
 
-# Editing this README
+```sh
+npm create sanity@latest -- --template nuotsu/sanitypress
+```
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+See the documentation if you are [having issues with the CLI](https://www.sanity.io/help/cli-errors).
 
-## Suggestions for a good README
+Alternatively, you can also clone or fork [the GitHub template](https://github.com/nuotsu/sanitypress) to set up manually.
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+### 2. Start local server
 
-## Name
-Choose a self-explaining name for your project.
+Run the following command to start the development server:
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+- Website: http://localhost:3000
+- Sanity Studio: http://localhost:3000/admin
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+```sh
+npm run dev
+```
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+### 3. Add content
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+In your new Sanity Studio, publish the **required** `site` and `page` documents.
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+| Document        | Slug           | Use             | Required? | Notes                                                                                          |
+| --------------- | -------------- | --------------- | :-------: | ---------------------------------------------------------------------------------------------- |
+| `site`          |                | Global settings |    ✅     |                                                                                                |
+| `page`          | `index`        | Homepage        |    ✅     |                                                                                                |
+| `page`          | `404`          | Page not found  |           |                                                                                                |
+| `page`          | `blog`         | Blog listing    |           | Add the [**Blog frontpage**](https://sanitypress.dev/docs/modules/blog-frontpage) module       |
+| `global-module` | `blog/` (path) | Blog post       |           | Add the [**Blog post content**](https://sanitypress.dev/docs/modules/blog-post-content) module |
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+Read the [Getting Started docs](https://sanitypress.dev/docs/getting-started) for more information.
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+Alternatively, you can import the [demo site](https://demo.sanitypress.dev) dataset:
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+```sh
+sanity dataset import src/sanity/demo.tar.gz
+```
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+### 4. Set up deployments
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+#### 1. Create a GitHub repository
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+Create a GitHub repository from this project. [Learn more](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github).
 
-## License
-For open source projects, say how it is licensed.
+#### 2. Set up deployments
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+Create a new [Vercel](https://vercel.com) / [Netlify](https://www.netlify.com) / etc project, connecting it to your Github repository
+
+Set up your deployment settings, such as the **Root Directory** to your Next.js app.
+
+#### 3. Set environment variables
+
+Configure your Environment Variables in Vercel / Netlify / etc.
+
+```ini
+NEXT_PUBLIC_BASE_URL="" # https://sanitypress.dev
+
+NEXT_PUBLIC_SANITY_PROJECT_ID="" # abcdefgh
+NEXT_PUBLIC_SANITY_DATASET="" # production
+SANITY_API_READ_TOKEN="" # "Viewer" token from https://sanity.io/manage
+
+NEXT_PUBLIC_GITHUB_TOKEN="" # recommended to add to display GitHub stars & forks
+```
+
+#### 4. Add a deployment widget to enable deployments directly from the Studio.
+
+- Vercel: [`vercel-dashboard-widget`](https://www.sanity.io/plugins/vercel-dashboard-widget)
+- Netlify: [`sanity-plugin-dashboard-widget-netlify`](https://www.sanity.io/plugins/sanity-plugin-dashboard-widget-netlify)
+
+### 5. Customize
+
+Adjust frontend styles, edit/add Sanity schema and modules, and [more](https://sanitypress.dev/blog/the-developers-guide-to-customizing-sanitypress).
+
+## How to Support
+
+- [🧡 Donations](https://sanitypress.dev/how-to-support)
+- [🩷 Sponsor on GitHub](https://github.com/sponsors/nuotsu)
+- [☕ Buy me a coffee](https://buymeacoffee.com/nuotsu)

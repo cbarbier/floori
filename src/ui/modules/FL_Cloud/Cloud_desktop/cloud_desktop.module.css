@@ -1,0 +1,17 @@
+.frame {
+	width: 760px;
+	height: 152px;
+	background-image: url('/svg/shape_desktop.svg');
+}
+
+.inner {
+	width: 612px;
+	height: 62px;
+	border: 1px solid red;
+}
+
+.phrase {
+	width: 612px;
+	height: 60px;
+	border: 1px solid black;
+}

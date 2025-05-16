@@ -1,0 +1,10 @@
+.header {
+	grid-template:
+		'logo toggle' auto
+		'nav nav' auto
+		'ctas ctas' auto / 1fr auto;
+
+	@media (width >= 40rem) {
+		grid-template: 'nav logo ctas' auto;
+	}
+}

@@ -1,0 +1,31 @@
+@font-face {
+	font-family: 'Clash Display';
+	font-style: normal;
+	font-display: auto;
+	font-weight: 700;
+	src: url('/fonts/ClashDisplay-Bold.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Clash Display';
+	font-style: normal;
+	font-display: auto;
+	font-weight: 600;
+	src: url('/fonts/ClashDisplay-Semibold.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Inter';
+	font-style: normal;
+	font-display: auto;
+	font-weight: 400;
+	src: url('/fonts/Inter_18pt-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Inter';
+	font-style: normal;
+	font-display: auto;
+	font-weight: 700;
+	src: url('/fonts/Inter_18pt-Bold.ttf') format('truetype');
+}
