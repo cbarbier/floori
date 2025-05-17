@@ -21,6 +21,7 @@
 		"@sanity/document-internationalization": "^3.3.1",
 		"@sanity/image-url": "^1.1.0",
 		"@sanity/preview-url-secret": "^2.1.11",
+		"@sanity/ui": "^2.15.17",
 		"@sanity/vision": "^3.88.2",
 		"@tailwindcss/postcss": "^4.1.6",
 		"@vercel/analytics": "^1.5.0",

@@ -29,6 +29,9 @@ importers:
       '@sanity/preview-url-secret':
         specifier: ^2.1.11
         version: 2.1.11(@sanity/client@7.2.1(debug@4.4.0))
+      '@sanity/ui':
+        specifier: ^2.15.17
+        version: 2.15.17(@emotion/is-prop-valid@1.2.2)(react-dom@19.1.0(react@19.1.0))(react-is@18.3.1)(react@19.1.0)(styled-components@6.1.18(react-dom@19.1.0(react@19.1.0))(react@19.1.0))
       '@sanity/vision':
         specifier: ^3.88.2
         version: 3.88.2(@babel/runtime@7.27.1)(@codemirror/lint@6.8.5)(@codemirror/theme-one-dark@6.1.2)(@emotion/is-prop-valid@1.2.2)(codemirror@6.0.1)(react-dom@19.1.0(react@19.1.0))(react-is@18.3.1)(react@19.1.0)(styled-components@6.1.18(react-dom@19.1.0(react@19.1.0))(react@19.1.0))
