@@ -17,7 +17,6 @@ const client = createClient({
 })
 
 const baseConfig: NextConfig = {
-	distDir: 'build',
 	images: {
 		domains: ['cdn.sanity.io'],
 		dangerouslyAllowSVG: true,
