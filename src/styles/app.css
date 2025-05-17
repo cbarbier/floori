@@ -14,12 +14,14 @@
 	--color-crab: #fe6641;
 	--color-vistablue: #85aff9;
 	--color-creamy: #f8f6f5;
+	--color-darkseashell: #d1bcb2;
 
 	--font-cdis: 'Clash Display', 'sans-serif';
 	--font-inter: 'Inter', 'sans-serif';
 
 	--max-height-fold: calc(100svh - var(--header-height));
 
+	--breakpoint-xs: 20rem;
 	--breakpoint-sm: 40rem;
 	--breakpoint-md: 48rem;
 	--breakpoint-lg: 64rem;
@@ -220,6 +222,21 @@
 
 	&:hover {
 		@apply bg-seashell text-crab cursor-pointer;
+	}
+}
+
+@utility floori-light {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 0.5rem 1.78125rem;
+	line-height: 28px;
+	text-shadow: none;
+	@apply bg-seashell border-seashell font-cdis text-crab rounded-[17px] border-2 font-semibold;
+
+	&:hover {
+		@apply bg-crab text-seashell cursor-pointer;
 	}
 }
 

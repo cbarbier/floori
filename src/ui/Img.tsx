@@ -17,6 +17,7 @@ export function Img({
 
 	const { src, width, height } = generateSrc(image, w, h)
 
+	console.log(src, image)
 	const loading = stegaClean(image.loading)
 
 	return (

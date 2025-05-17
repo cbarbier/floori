@@ -125,7 +125,21 @@ declare global {
 			}
 		}
 
-		// objects
+		// floori
+
+		interface Review {
+			_type: 'review'
+			text: string
+			sign: string
+		}
+
+		interface Skill {
+			_type: 'skill'
+			title: string
+			text: string
+		}
+
+		type Slide = { _key: string } & (Review | Skill)
 
 		interface Card {
 			front: string
@@ -133,10 +147,17 @@ declare global {
 			color: any
 		}
 
+		interface Number {
+			value: number
+			unit: string
+			text: any
+		}
+
 		interface FLIcons {
 			image: Image
 			text: any
 		}
+		// objects
 
 		interface Code {
 			readonly _type: 'code'

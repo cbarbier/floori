@@ -35,6 +35,11 @@ export default defineField({
 		{ type: 'fl_cards' },
 		{ type: 'fl_icons' },
 		{ type: 'fl_cloud' },
+		{ type: 'fl_slider' },
+		{ type: 'fl_definition' },
+		{ type: 'fl_numbers' },
+		{ type: 'fl_final' },
+		{ type: 'fl_founder' },
 	],
 	options: {
 		insertMenu: {
@@ -47,7 +52,20 @@ export default defineField({
 				{ name: 'list' },
 			],
 			groups: [
-				{ name: 'floori', of: ['fl_hero', 'fl_cards', 'fl_icons', 'fl_cloud'] },
+				{
+					name: 'floori',
+					of: [
+						'fl_hero',
+						'fl_cards',
+						'fl_icons',
+						'fl_cloud',
+						'ft_slider',
+						'fl_definition',
+						'fl_numbers',
+						'fl_final',
+						'fl_founder',
+					],
+				},
 				{
 					name: 'blog',
 					of: ['blog-frontpage', 'blog-list', 'blog-post-content'],

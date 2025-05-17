@@ -16,13 +16,16 @@ const client = createClient({
 	useCdn: true,
 })
 
-const config: NextConfig = {
+const baseConfig: NextConfig = {
+	distDir: 'build',
 	images: {
+		domains: ['cdn.sanity.io'],
 		dangerouslyAllowSVG: true,
 		remotePatterns: [
 			{
 				protocol: 'https',
 				hostname: 'cdn.sanity.io',
+				pathname: '/images/**', // allow all images under /images/
 			},
 			{
 				protocol: 'https',
@@ -68,4 +71,5 @@ const config: NextConfig = {
 	// },
 } satisfies NextConfig
 
-export default withNextIntl(config)
+// export default baseConfig
+export default withNextIntl(baseConfig)

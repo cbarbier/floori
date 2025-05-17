@@ -1,0 +1,9 @@
+NEXT_PUBLIC_BASE_URL="https://flooriparis.netlify.app
+"
+
+NEXT_PUBLIC_SANITY_PROJECT_ID="88icbxqp"
+NEXT_PUBLIC_SANITY_DATASET="production"
+
+SANITY_API_READ_TOKEN="skJkU6o5V0hRbQi4Mtrx3dTW0tIsUTAurmuCNMhqz0v3sAPlSwENJtAEktVyOUIEm4nkO8gY01Pamr4IYZoXqJY5WQ9nVFuaSjwaGOmZynPxnhRBGtroITetsV0NBLnYghFSrE2cq5J36grN6vLZsWbIzHF7x0r4ZqQr0b99pZE8PfiYnHIJ"
+
+NEXT_PUBLIC_GITHUB_TOKEN="" # recommended to add to display GitHub stars & forks

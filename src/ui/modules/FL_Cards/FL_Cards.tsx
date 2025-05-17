@@ -39,7 +39,7 @@ export default function FL_Cards({
 							'font-cdis px-8 text-[1.375rem] font-semibold sm:text-[1.75rem]'
 						return (
 							<div key={'fl-card-' + i}>
-								<div className="perspective group aspect-square w-[min(100vw,21.9375rem)] text-center sm:w-[25rem]">
+								<div className="perspective group aspect-square w-[min(calc(100vw-2rem),21.9375rem)] text-center sm:w-[25rem]">
 									{/* The inner card flips when the parent group is hovered */}
 									<div className="transform-style preserve-3d relative h-full w-full transition-transform duration-700 group-hover:rotate-y-180">
 										<div className="bg-creamy absolute flex h-full w-full items-center justify-center rounded-[2.5rem] border border-[#D1BCB2] text-black backface-hidden">

@@ -19,6 +19,14 @@ export default function CustomPortableText({
 								children
 							)
 						},
+						strong: ({ children }) => (
+							<span className="font-bold">{children}</span>
+						),
+						source: ({ children }) => (
+							<span style={{ color: 'rgba(255, 255, 255, 0.6)' }}>
+								{children}
+							</span>
+						),
 					},
 					block: {
 						h1: ({ children }) => <h1 className="h1">{children}</h1>,

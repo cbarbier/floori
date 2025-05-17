@@ -57,6 +57,11 @@ import fl_hero from './modules/fl_hero'
 import fl_cards from './modules/fl_cards'
 import fl_icons from './modules/fl_icons'
 import fl_cloud from './modules/fl_cloud'
+import fl_slider from './modules/fl_slider'
+import fl_definition from './modules/fl_definition'
+import fl_numbers from './modules/fl_numbers'
+import fl_final from './modules/fl_final'
+import fl_founder from './modules/fl_founder'
 
 export const schemaTypes: SchemaTypeDefinition[] = [
 	// documents
@@ -116,4 +121,9 @@ export const schemaTypes: SchemaTypeDefinition[] = [
 	fl_cards,
 	fl_icons,
 	fl_cloud,
+	fl_slider,
+	fl_definition,
+	fl_numbers,
+	fl_final,
+	fl_founder,
 ]

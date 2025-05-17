@@ -42,9 +42,16 @@ export const REPUTATION_QUERY = groq`
 
 export const MODULES_QUERY = groq`
 	...,
+	cta{
+		${CTA_QUERY}
+	},
 	ctas[]{
 		...,
 		link{ ${LINK_QUERY} }
+	},
+	_type == 'fl_founder' => {
+		...,
+		'image': asset{ ${ASSET_IMG_QUERY} }
 	},
 	_type == 'blog-list' => { filteredCategory-> },
 	_type == 'breadcrumbs' => { crumbs[]{ ${LINK_QUERY} } },

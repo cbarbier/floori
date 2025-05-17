@@ -24,6 +24,7 @@ export default defineType({
 					'floori-header',
 					'floori-nav',
 					'floori-hero',
+					'floori-light',
 				],
 			},
 		}),

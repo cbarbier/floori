@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils'
 import Calendar from '../Calendar'
 import CustomPortableText from './RichtextModule/CustomPortableText'
 
-export default function FL_Hero({
+export default function FL_Final({
 	title,
 	subtitle,
 	cta,
@@ -17,10 +17,7 @@ export default function FL_Hero({
 }> &
 	Sanity.Module) {
 	return (
-		<section
-			className={cn('pt-[9.25rem] sm:pt-[10.1875rem]')}
-			{...moduleProps(props)}
-		>
+		<section className={cn('bg-crab')} {...moduleProps(props)}>
 			<div className="section mx-auto flex w-fit flex-col text-balance">
 				<div
 					className={cn('richtext m-automax-w-xl relative isolate text-center')}
@@ -28,7 +25,7 @@ export default function FL_Hero({
 					<div className="mb-[1.25rem] sm:mb-[1.5rem]">
 						<CustomPortableText value={title} />
 					</div>
-					<div className="font-inter mb-[2.875rem] sm:mb-[4.375rem]">
+					<div className="font-inter mb-[2.875rem] text-white sm:mb-[4.375rem]">
 						<CustomPortableText value={subtitle} />
 					</div>
 					{cta && (
@@ -36,7 +33,6 @@ export default function FL_Hero({
 					)}
 				</div>
 			</div>
-			<Calendar />
 		</section>
 	)
 }
