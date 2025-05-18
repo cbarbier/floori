@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@netlify/plugin-nextjs':
-        specifier: ^5.11.1
-        version: 5.11.1
       '@portabletext/to-html':
         specifier: ^2.0.14
         version: 2.0.14
@@ -1544,10 +1541,6 @@ packages:
   '@modelcontextprotocol/sdk@1.11.2':
     resolution: {integrity: sha512-H9vwztj5OAqHg9GockCQC06k1natgcxWQSRpQcPJf6i5+MWBzfKkRtxGbjQf0X2ihii0ffLZCRGbYV2f2bjNCQ==}
     engines: {node: '>=18'}
-
-  '@netlify/plugin-nextjs@5.11.1':
-    resolution: {integrity: sha512-JD4JtrhW3R0uDaROfNzmhVoYFvj+GS2ARq7YXVXNFxo+rNyU4wJ6nuDZFTsuoEp4nbIVsm2oPaXyjgqk4pd1EA==}
-    engines: {node: '>=18.0.0'}
 
   '@next/env@15.3.2':
     resolution: {integrity: sha512-xURk++7P7qR9JG1jJtLzPzf0qEvqCN0A/T3DXf8IPMKo9/6FfjxtEffRJIIew/bIL4T3C2jLLqBor8B/zVlx6g==}
@@ -8209,8 +8202,6 @@ snapshots:
       zod-to-json-schema: 3.24.5(zod@3.24.4)
     transitivePeerDependencies:
       - supports-color
-
-  '@netlify/plugin-nextjs@5.11.1': {}
 
   '@next/env@15.3.2': {}
 
