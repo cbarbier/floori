@@ -1,0 +1,244 @@
+{
+	"CalendarDesktop": [
+		{
+			"DAY": "MONDAY"
+		},
+		{
+			"label": "cd1",
+			"hour": "9:00",
+			"color": "blue",
+			"visio": true,
+			"duration": "1",
+			"half": "0"
+		},
+		{
+			"label": "cd2",
+			"hour": "10:00",
+			"color": "blue",
+			"visio": false,
+			"duration": "1",
+			"half": "0"
+		},
+		{
+			"label": "cd3",
+			"hour": "11:00",
+			"color": "blue",
+			"visio": true,
+			"duration": "1",
+			"half": "0"
+		},
+		{
+			"label": "cd4",
+			"hour": "12:00",
+			"color": "red",
+			"visio": false,
+			"duration": "2",
+			"half": "0"
+		},
+		{
+			"label": "cd5",
+			"hour": "14:00",
+			"color": "blue",
+			"visio": true,
+			"duration": "1",
+			"half": "0"
+		},
+		{
+			"label": "cd6",
+			"hour": "15:00",
+			"color": "orange",
+			"visio": false,
+			"duration": "1",
+			"half": "1"
+		},
+		{
+			"label": "cd7",
+			"hour": "15:00",
+			"color": "blue",
+			"visio": false,
+			"duration": "2",
+			"half": "2"
+		},
+		{
+			"DAY": "TUESDAY"
+		},
+		{
+			"label": "cd8",
+			"hour": "10:00",
+			"color": "blue",
+			"visio": false,
+			"duration": "2",
+			"half": "1",
+			"breakword": true
+		},
+		{
+			"label": "cd9",
+			"hour": "10:00",
+			"color": "grey",
+			"visio": false,
+			"duration": "1",
+			"half": "2"
+		},
+		{
+			"label": "cd10",
+			"hour": "13:00",
+			"color": "blue",
+			"visio": true,
+			"duration": "1",
+			"half": "0"
+		},
+		{
+			"label": "cd11",
+			"hour": "15:00",
+			"color": "blue",
+			"visio": true,
+			"duration": "2",
+			"half": "0"
+		},
+		{
+			"label": "cd12",
+			"hour": "17:00",
+			"color": "brown",
+			"visio": true,
+			"duration": "1",
+			"half": "0"
+		},
+		{
+			"DAY": "WEDNESDAY"
+		},
+		{
+			"label": "cd13",
+			"hour": "10:00",
+			"color": "blue",
+			"visio": true,
+			"duration": "1",
+			"half": "1"
+		},
+		{
+			"label": "cd14",
+			"hour": "10:30",
+			"color": "grey",
+			"visio": true,
+			"duration": "1.5",
+			"half": "2"
+		},
+		{
+			"label": "cd15",
+			"hour": "11:00",
+			"color": "grey",
+			"visio": false,
+			"duration": "1",
+			"half": "1"
+		},
+		{
+			"label": "cd16",
+			"hour": "12:00",
+			"color": "red",
+			"visio": true,
+			"duration": "1",
+			"half": "0"
+		},
+		{
+			"label": "cd17",
+			"hour": "14:00",
+			"color": "blue",
+			"visio": true,
+			"duration": "2",
+			"half": "0"
+		},
+		{
+			"DAY": "THURSDAY"
+		},
+		{
+			"label": "cd18",
+			"hour": "11:00",
+			"color": "red",
+			"visio": true,
+			"duration": "1",
+			"half": "0"
+		},
+		{
+			"label": "cd19",
+			"hour": "12:00",
+			"color": "red",
+			"visio": true,
+			"duration": "1",
+			"half": "0"
+		},
+		{
+			"label": "cd20",
+			"hour": "13:00",
+			"color": "red",
+			"visio": true,
+			"duration": "1",
+			"half": "0"
+		},
+		{
+			"label": "cd21",
+			"hour": "14:00",
+			"color": "blue",
+			"visio": true,
+			"duration": "1",
+			"half": "0"
+		},
+		{
+			"DAY": "FRIDAY"
+		},
+		{
+			"label": "cd22",
+			"hour": "10:00",
+			"color": "blue",
+			"visio": true,
+			"duration": "1",
+			"half": "0"
+		},
+		{
+			"label": "cd23",
+			"hour": "11:15",
+			"color": "red",
+			"visio": true,
+			"duration": "1",
+			"half": "1"
+		},
+		{
+			"label": "cd24",
+			"hour": "11:45",
+			"color": "red",
+			"visio": true,
+			"duration": "1",
+			"half": "2"
+		},
+		{
+			"label": "cd25",
+			"hour": "13:00",
+			"color": "blue",
+			"visio": false,
+			"duration": "1",
+			"half": "0"
+		},
+		{
+			"label": "cd26",
+			"hour": "15:00",
+			"color": "yellow",
+			"visio": true,
+			"duration": "1",
+			"half": "0"
+		},
+		{
+			"label": "cd27",
+			"hour": "16:30",
+			"color": "yellow",
+			"visio": true,
+			"duration": "1",
+			"half": "2"
+		},
+		{
+			"label": "cd28",
+			"hour": "17:00",
+			"color": "yellow",
+			"visio": true,
+			"duration": "1",
+			"half": "1"
+		}
+	]
+}

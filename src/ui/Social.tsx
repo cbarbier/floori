@@ -6,7 +6,7 @@ import {
 	FaFacebookF,
 	FaGithub,
 	FaInstagram,
-	FaLinkedinIn,
+	FaLinkedin,
 	FaTiktok,
 	FaXTwitter,
 	FaYoutube,
@@ -20,7 +20,12 @@ export default async function Social({ className }: ComponentProps<'div'>) {
 	if (!social?.items?.length) return null
 
 	return (
-		<nav className={cn('group flex flex-wrap items-center', className)}>
+		<nav
+			className={cn(
+				'group flex flex-wrap items-center justify-center',
+				className,
+			)}
+		>
 			{social.items.map((item, key) => {
 				switch (item._type) {
 					case 'link':
@@ -57,7 +62,7 @@ function Icon({
 	) : url?.includes('instagram.com') ? (
 		<FaInstagram {...props} />
 	) : url?.includes('linkedin.com') ? (
-		<FaLinkedinIn {...props} />
+		<FaLinkedin size={32} {...props} />
 	) : url?.includes('tiktok.com') ? (
 		<FaTiktok {...props} />
 	) : url?.includes('twitter.com') || url?.includes('x.com') ? (

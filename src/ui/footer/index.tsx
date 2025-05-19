@@ -12,9 +12,12 @@ export default async function Footer() {
 	const logoImage = logo?.image?.light || logo?.image?.default
 
 	return (
-		<footer className="bg-ink text-canvas" role="contentinfo">
-			<div className="section flex flex-wrap justify-between gap-x-12 gap-y-8 max-sm:flex-col">
-				<div className="flex flex-col gap-3 self-stretch">
+		<footer
+			className="bg-deepocean text-seashell sm-px-8 px-4"
+			role="contentinfo"
+		>
+			<div className="section flex flex-wrap items-center justify-start gap-x-12 gap-y-8 max-sm:flex-col">
+				<div className="mr-auto flex flex-col gap-3 self-stretch">
 					<Link className="h3 md:h2 max-w-max" href="/">
 						{logoImage ? (
 							<Img
@@ -33,11 +36,10 @@ export default async function Footer() {
 						</div>
 					)}
 
-					<Social className="mb-auto -ml-2" />
-
 					<LanguageSwitcher className="mt-4 max-w-max" />
 				</div>
 
+				<Social className="" />
 				<Navigation />
 			</div>
 

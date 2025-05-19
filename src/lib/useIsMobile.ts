@@ -14,6 +14,7 @@ export function useIsMobile(breakpointArg?: number): boolean {
 		if (typeof window === 'undefined') return
 
 		const handleResize = () => {
+			console.log('USE MOBILE', window.innerWidth, breakpoint)
 			setIsMobile(window.innerWidth < breakpoint)
 		}
 

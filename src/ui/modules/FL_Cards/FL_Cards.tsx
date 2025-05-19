@@ -4,6 +4,7 @@ import CTAList from '@/ui/CTAList'
 import { cn } from '@/lib/utils'
 import Calendar from '@/ui/Calendar'
 import CustomPortableText from '../RichtextModule/CustomPortableText'
+import css from './FL_Cards.module.css'
 
 export default function FL_Cards({
 	title,
@@ -41,7 +42,12 @@ export default function FL_Cards({
 							<div key={'fl-card-' + i}>
 								<div className="perspective group aspect-square w-[min(calc(100vw-2rem),21.9375rem)] text-center sm:w-[25rem]">
 									{/* The inner card flips when the parent group is hovered */}
-									<div className="transform-style preserve-3d relative h-full w-full transition-transform duration-700 group-hover:rotate-y-180">
+									<div
+										className={cn(
+											'transform-style preserve-3d relative h-full w-full delay-0 group-hover:rotate-y-180',
+											css.flipcard,
+										)}
+									>
 										<div className="bg-creamy absolute flex h-full w-full items-center justify-center rounded-[2.5rem] border border-[#D1BCB2] text-black backface-hidden">
 											<div className={cn(cardClass)}>{c.front}</div>
 										</div>

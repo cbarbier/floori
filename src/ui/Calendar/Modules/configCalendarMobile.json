@@ -1,0 +1,67 @@
+{
+	"CalendarMobile": [
+		{
+			"DAY": "1",
+			"label": "cmd1"
+		},
+		{
+			"label": "cd20",
+			"hour": "11:00",
+			"end": "12:00",
+			"color": "red"
+		},
+		{
+			"label": "cd19",
+			"hour": "12:00",
+			"end": "13:00",
+			"color": "red"
+		},
+		{
+			"label": "cd18",
+			"hour": "13:00",
+			"end": "14:00",
+			"color": "red"
+		},
+		{
+			"label": "cd21",
+			"hour": "14:00",
+			"end": "15:00",
+			"color": "blue"
+		},
+
+		{
+			"DAY": "2",
+			"label": "cmd2"
+		},
+		{
+			"label": "cd22",
+			"hour": "10:00",
+			"end": "11:00",
+			"color": "blue"
+		},
+		{
+			"label": "cd23",
+			"hour": "11:15",
+			"end": "12:15",
+			"color": "red"
+		},
+		{
+			"label": "cd24",
+			"hour": "11:45",
+			"end": "12:45",
+			"color": "red"
+		},
+		{
+			"label": "cd25",
+			"hour": "13:00",
+			"end": "14:00",
+			"color": "blue"
+		},
+		{
+			"label": "cd26",
+			"hour": "15:00",
+			"end": "16:00",
+			"color": "yellow"
+		}
+	]
+}

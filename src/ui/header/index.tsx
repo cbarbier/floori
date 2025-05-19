@@ -7,6 +7,7 @@ import CTAList from '@/ui/CTAList'
 import Toggle from './Toggle'
 import { cn } from '@/lib/utils'
 import css from './Header.module.css'
+import FL_LanguageSwitcher from '../LanguageSwitcher/FL_LanguageSwitcher'
 
 export default async function Header() {
 	const { title, logo, ctas } = await getSite()
@@ -21,6 +22,7 @@ export default async function Header() {
 					'mx-auto grid max-w-screen-xl items-center gap-x-6',
 				)}
 			>
+				<FL_LanguageSwitcher className="[grid-area:lang]" />
 				<div className="[grid-area:logo]">
 					<Link className={cn('h4 sm:h3 grid')} href="/">
 						{logoImage ? (
