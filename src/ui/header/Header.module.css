@@ -1,10 +1,14 @@
 .header {
-	grid-template:
-		'lang logo toggle' auto
-		'nav nav' auto
-		'ctas ctas' auto / 1fr auto;
+	grid-template-areas:
+		'lang logo toggle'
+		'nav nav nav'
+		'ctas ctas ctas';
+
+	grid-template-columns: 1fr auto auto;
+	grid-template-rows: auto auto auto;
 
 	@media (width >= 40rem) {
-		grid-template: 'lang nav logo ctas' auto;
+		grid-template-columns: 2.5rem 1fr 1fr 1fr;
+		grid-template-areas: 'lang nav logo ctas';
 	}
 }

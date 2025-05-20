@@ -18,7 +18,9 @@ export default function FL_Hero({
 	Sanity.Module) {
 	return (
 		<section
-			className={cn('pt-[9.25rem] sm:pt-[10.1875rem]')}
+			className={cn(
+				'pt-[9.25rem] pb-[3.875rem] sm:pt-[10.1875rem] sm:pb-[4.125rem]',
+			)}
 			{...moduleProps(props)}
 		>
 			<div className="section mx-auto flex w-fit flex-col text-balance">

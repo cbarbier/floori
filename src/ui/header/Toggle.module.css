@@ -1,0 +1,27 @@
+.hamb {
+	& .line {
+		position: relative;
+		background-color: #0657de;
+		display: block;
+		height: 2px;
+		width: 24px;
+		border-radius: 7px;
+	}
+
+	& .line::before,
+	& .line::after {
+		background-color: #0657de;
+		content: '';
+		display: block;
+		height: 100%;
+		position: absolute;
+		transition: all 0.2s ease-out;
+		width: 100%;
+	}
+	.line::before {
+		top: 7px;
+	}
+	.line::after {
+		top: -7px;
+	}
+}

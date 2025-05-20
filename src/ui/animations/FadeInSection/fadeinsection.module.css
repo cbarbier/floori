@@ -1,0 +1,13 @@
+.fadeinsection {
+	opacity: 0;
+	transform: translateY(358px);
+	transition:
+		opacity 0.7s ease-out,
+		transform 0.7s ease-out;
+	will-change: opacity, transform;
+}
+
+.isvisible {
+	opacity: 1;
+	transform: translateY(0);
+}

@@ -433,6 +433,18 @@
 	@apply bg-ink/3 h-[3lh];
 }
 
+@utility cross-toggle {
+	background-color: transparent !important;
+	&::after {
+		top: 0px !important;
+		transform: rotate(-45deg);
+	}
+	&::before {
+		top: 0px !important;
+		transform: rotate(45deg);
+	}
+}
+
 /* components */
 
 @utility accordion {

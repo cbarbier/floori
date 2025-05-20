@@ -43,3 +43,12 @@ export function slug(str: string) {
 		.replace(/^-+/, '')
 		.replace(/-+$/, '')
 }
+
+export function countDecimals(value: number): number {
+	if (Math.floor(value) === value) return 0
+	const valueStr = value.toExponential()
+	const [mantissa, exponent] = valueStr.split('e')
+	const decimals = (mantissa.split('.')[1] || '').length
+	const exp = parseInt(exponent, 10)
+	return Math.max(0, decimals - exp)
+}

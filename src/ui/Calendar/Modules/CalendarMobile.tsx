@@ -13,6 +13,7 @@ const buildTiles = (config: any, translate: any) => {
 		if (t.DAY) {
 			return [
 				<div
+					key={`tile-mobile-day-${day}`}
 					className="font-inter text-[0.6875rem] font-[500] text-[#71717A]"
 					style={{
 						marginTop: day++ ? '26px' : '0px',

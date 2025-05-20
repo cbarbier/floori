@@ -6,15 +6,13 @@ const MOBILE_BREAKPOINT = 640 // px
 
 export function useIsMobile(breakpointArg?: number): boolean {
 	const breakpoint = breakpointArg ?? MOBILE_BREAKPOINT
-	const [isMobile, setIsMobile] = useState<boolean>(
-		typeof window !== 'undefined' ? window.innerWidth < breakpoint : false,
-	)
+	const [isMobile, setIsMobile] = useState<boolean>(false)
 
 	useEffect(() => {
 		if (typeof window === 'undefined') return
 
 		const handleResize = () => {
-			console.log('USE MOBILE', window.innerWidth, breakpoint)
+			console.log('USE MOBILE', window.innerWidth, breakpoint, isMobile)
 			setIsMobile(window.innerWidth < breakpoint)
 		}
 
