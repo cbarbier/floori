@@ -38,11 +38,11 @@ export default function Cloud_desktop({
 				{'<'}
 			</button>
 
-			<div className={cn(css.frame, 'overflow-x-hidden border')}>
+			<div className={cn(css.frame, 'overflow-x-hidden')}>
 				<div
 					className={cn(
 						css.inner,
-						'relative top-[3.5rem] mx-auto overflow-x-hidden border border-amber-50',
+						'relative top-[3.2rem] mx-auto overflow-x-hidden',
 					)}
 				>
 					<div

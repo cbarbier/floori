@@ -11,10 +11,14 @@ import {
 } from '@/sanity/lib/queries'
 import { languages } from '@/lib/i18n'
 import errors from '@/lib/errors'
+import AnimatedModules from '@/ui/modules/AnimatedModules'
 
 export default async function Page({ params }: Props) {
 	const page = await getPage(await params)
 	if (!page) notFound()
+	if (page.animated) {
+		return <AnimatedModules modules={page.modules} page={page} />
+	}
 	return <Modules modules={page.modules} page={page} />
 }
 

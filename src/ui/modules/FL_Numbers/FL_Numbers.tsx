@@ -39,7 +39,7 @@ export default function FL_Numbers({
 									<div className={cn(cardClass)}>
 										<div className="transition-all duration-700 group-hover:scale-105">
 											<p className="number font-cdis text-deepocean text-[3.4375rem] font-bold sm:text-[4.375rem]">
-												<CountUp duration={1000} to={number.value} />
+												<CountUp duration={1500} to={number.value} />
 												<span className="unit">{number.unit}</span>
 											</p>
 										</div>

@@ -53,9 +53,5 @@ export function CountUp({
 		return () => cancelAnimationFrame(animationFrame)
 	}, [to, duration, decimals, easingFn, isInView])
 
-	return (
-		<div ref={ref} className="inline">
-			{count}
-		</div>
-	)
+	return <span ref={ref}>{count}</span>
 }

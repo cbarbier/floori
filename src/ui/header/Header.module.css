@@ -12,3 +12,12 @@
 		grid-template-areas: 'lang nav logo ctas';
 	}
 }
+
+.box {
+	position: absolute;
+	width: min(58rem, calc(100% - 2rem));
+	height: 100px;
+	/* inset: 0; */
+	top: 2rem;
+	margin-inline: auto;
+}

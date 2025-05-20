@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils'
 import Calendar from '@/ui/Calendar'
 import CustomPortableText from '../RichtextModule/CustomPortableText'
 import { Img } from '@/ui/Img'
+import { FadeInSection } from '@/ui/animations/FadeInSection'
 
 export default function FL_Icons({
 	icons,
@@ -23,18 +24,20 @@ export default function FL_Icons({
 						const cardClass =
 							'font-inter max-w-[18.6875rem] flex flex-wrap justify-center p-2 items-center gap-[6.25rem] sm:gap-[3.5625rem] group'
 						return (
-							<div key={'fl-icon-' + i}>
-								<div className={cn(cardClass)}>
-									<Img
-										image={icon.image}
-										className="group-hover:animate-bounce"
-									/>
-									<CustomPortableText
-										value={icon.text}
-										className="text-center text-[1rem]"
-									/>
+							<FadeInSection key={'fl-icon-' + i} delay={`${0.7 * i}s`}>
+								<div>
+									<div className={cn(cardClass)}>
+										<Img
+											image={icon.image}
+											className="group-hover:animate-bounce"
+										/>
+										<CustomPortableText
+											value={icon.text}
+											className="text-center text-[1rem]"
+										/>
+									</div>
 								</div>
-							</div>
+							</FadeInSection>
 						)
 					})}
 				</div>

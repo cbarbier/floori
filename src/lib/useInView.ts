@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 
-export function useInView(threshold = 0.1, triggerOnce = false) {
+export function useInView(threshold = 0.1, triggerOnce = true) {
 	const ref = useRef<HTMLDivElement | null>(null)
 	const [isInView, setIsInView] = useState(false)
 

@@ -25,11 +25,11 @@ export default function Cloud_mobile({
 	}
 	return (
 		<div className="mx-auto mt-[3.125rem] w-fit max-w-[calc(100vw-1rem)] overflow-x-hidden">
-			<div className={cn(css.frame, 'overflow-x-hidden border')}>
+			<div className={cn(css.frame, 'overflow-x-hidden')}>
 				<div
 					className={cn(
 						css.inner,
-						'relative top-[3.1rem] mx-auto overflow-x-hidden border border-amber-50',
+						'relative top-[3.1rem] mx-auto overflow-x-hidden',
 					)}
 				>
 					<div

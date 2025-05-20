@@ -14,7 +14,11 @@ export default defineType({
 	name: 'page',
 	title: 'Page',
 	type: 'document',
-	groups: [{ name: 'content', default: true }, { name: 'metadata' }],
+	groups: [
+		{ name: 'content', default: true },
+		{ name: 'metadata' },
+		{ name: 'animation' },
+	],
 	fields: [
 		defineField({
 			name: 'title',
@@ -36,6 +40,12 @@ export default defineType({
 			type: 'string',
 			readOnly: true,
 			hidden: true,
+		}),
+		defineField({
+			type: 'boolean',
+			name: 'animated',
+			initialValue: false,
+			group: 'animation',
 		}),
 	],
 	preview: {

@@ -142,9 +142,9 @@
 	--y: -1rem;
 }
 
-@utility anim-fade-to-b2 {
+@utility anim-fade-to-t2 {
 	--x: 0;
-	--y: 10rem;
+	--y: -10rem;
 	animation: anim-fade-to 700ms ease-in-out forwards;
 }
 
