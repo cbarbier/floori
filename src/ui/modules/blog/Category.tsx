@@ -6,14 +6,17 @@ export default function Category({
 	value,
 	label,
 	linked,
+	hash = true,
 }: {
 	value?: Sanity.BlogCategory
 	label?: string
+	hash?: boolean
 	linked?: boolean
 }) {
 	const props = {
 		className: cn(
-			"before:text-current/50 before:content-['#'] hover:*:underline",
+			'hover:*:underline',
+			hash && "before:text-current/50 before:content-['#']",
 			!linked && 'pointer-events-none',
 		),
 		children: <span>{label || value?.title}</span>,

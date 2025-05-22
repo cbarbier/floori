@@ -7,7 +7,7 @@ export default defineField({
 	of: [
 		{ type: 'accordion-list' },
 		{ type: 'blog-frontpage' },
-		{ type: 'blog-list' },
+		// { type: 'blog-list' },
 		{ type: 'blog-post-content' },
 		{ type: 'breadcrumbs' },
 		{ type: 'callout' },
@@ -40,6 +40,7 @@ export default defineField({
 		{ type: 'fl_numbers' },
 		{ type: 'fl_final' },
 		{ type: 'fl_founder' },
+		{ type: 'fl_blogs' },
 	],
 	options: {
 		insertMenu: {
@@ -64,18 +65,19 @@ export default defineField({
 						'fl_numbers',
 						'fl_final',
 						'fl_founder',
+						'fl_blogs',
 					],
 				},
 				{
 					name: 'blog',
-					of: ['blog-frontpage', 'blog-list', 'blog-post-content'],
+					of: ['blog-frontpage', 'blog-post-content'],
 				},
 				{ name: 'hero', of: ['hero', 'hero.saas', 'hero.split'] },
 				{
 					name: 'lists',
 					of: [
 						'accordion-list',
-						'blog-list',
+						// 'blog-list',
 						'card-list',
 						'flag-list',
 						'logo-list',

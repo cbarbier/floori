@@ -4,46 +4,51 @@ import { cn } from '@/lib/utils'
 import css from './CalendarMobile.module.css'
 import { useTranslations } from 'next-intl'
 import TileMobile from './TileMobile'
+import { useInView } from '@/lib/useInView'
+import { useCallback } from 'react'
 
 const config = require('./configCalendarMobile.json')
 
-const buildTiles = (config: any, translate: any) => {
-	let day = 0
-	const tiles = config['CalendarMobile'].flatMap((t: any) => {
-		if (t.DAY) {
-			return [
-				<div
-					key={`tile-mobile-day-${day}`}
-					className="font-inter text-[0.6875rem] font-[500] text-[#71717A]"
-					style={{
-						marginTop: day++ ? '26px' : '0px',
-					}}
-				>
-					{translate(t.label)}
-				</div>,
-			]
-		}
-
-		// if () {
-
-		// }
-		return [
-			<TileMobile
-				key={`tile-mobile-${t.label}`}
-				text={translate(t.label)}
-				hour={t.hour}
-				end={t.end}
-				color={t.color}
-			/>,
-		]
-	})
-	return tiles
-}
-
 export default function CalendarMobile() {
 	const t = useTranslations('CalendarText')
+	const { isInView, ref } = useInView(0.8)
+
+	const buildTiles = useCallback(
+		(config: any, translate: any) => {
+			let day = 0
+			const tiles = config['CalendarMobile'].flatMap((t: any) => {
+				if (t.DAY) {
+					return [
+						<div
+							key={`tile-mobile-day-${day}`}
+							className="font-inter text-[0.6875rem] font-[500] text-[#71717A]"
+							style={{
+								marginTop: day++ ? '26px' : '0px',
+							}}
+						>
+							{translate(t.label)}
+						</div>,
+					]
+				}
+				return [
+					<TileMobile
+						key={`tile-mobile-${t.label}`}
+						text={translate(t.label)}
+						hour={t.hour}
+						end={t.end}
+						color={t.color}
+						anim={t.anim}
+						isInView={isInView}
+					/>,
+				]
+			})
+
+			return tiles
+		},
+		[isInView],
+	)
 	return (
-		<div className="wrapper anim-fade-to-b2 mx-auto w-fit">
+		<div ref={ref} className="wrapper anim-fade-to-b2 mx-auto w-fit">
 			<div className="relative w-fit">
 				<div className={cn(css.calendar)}>{buildTiles(config, t)}</div>
 			</div>

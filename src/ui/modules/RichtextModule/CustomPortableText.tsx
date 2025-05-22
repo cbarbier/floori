@@ -1,12 +1,12 @@
-import { PortableText } from 'next-sanity'
 import { cn } from '@/lib/utils'
+import { PortableText } from 'next-sanity'
 
 export default function CustomPortableText({
 	value,
 	className,
 }: { value: any } & React.ComponentProps<'div'>) {
 	return (
-		<div className={cn('mx-auto w-full', className)}>
+		<div className={cn('mx-auto', className)}>
 			<PortableText
 				value={value}
 				components={{

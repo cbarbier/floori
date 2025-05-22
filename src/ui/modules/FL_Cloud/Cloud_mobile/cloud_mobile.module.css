@@ -1,19 +1,19 @@
 .frame {
-	max-width: 328px;
+	width: 328px;
 	height: 134px;
 	background-image: url('/svg/shape_mobile.svg');
 }
 
 .inner {
-	width: 318px;
+	width: 317px;
 	height: 66px;
-	border: 1px solid red;
+	/* border: 1px solid red; */
 }
 
 .phrase {
 	width: 316px;
 	height: 64px;
-	border: 1px solid black;
+	/* border: 1px solid black; */
 	line-height: 100%;
 	letter-spacing: 0%;
 }

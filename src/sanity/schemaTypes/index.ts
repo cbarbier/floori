@@ -62,6 +62,7 @@ import fl_definition from './modules/fl_definition'
 import fl_numbers from './modules/fl_numbers'
 import fl_final from './modules/fl_final'
 import fl_founder from './modules/fl_founder'
+import fl_blogs from './modules/fl_blogs'
 
 export const schemaTypes: SchemaTypeDefinition[] = [
 	// documents
@@ -126,4 +127,5 @@ export const schemaTypes: SchemaTypeDefinition[] = [
 	fl_numbers,
 	fl_final,
 	fl_founder,
+	fl_blogs,
 ]

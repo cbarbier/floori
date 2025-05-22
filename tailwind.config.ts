@@ -5,7 +5,20 @@ const config: Config = {
 	content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
 	theme: {
 		screens: {},
-		extend: {},
+		extend: {
+			keyframes: {
+				disappear: {
+					'100%': {
+						opacity: '0',
+						transform: 'scale(0.95)',
+						visibility: 'hidden',
+					},
+				},
+			},
+			animation: {
+				disappear: 'disappear 1s forwards',
+			},
+		},
 	},
 	plugins: [],
 }

@@ -21,7 +21,7 @@ import TestimonialList from './TestimonialList'
 import TestimonialFeatured from './TestimonialFeatured'
 
 // floori
-import FL_Hero from './FL_Hero'
+import FL_Hero from './FL_Hero/FL_Hero'
 import FL_Cards from './FL_Cards/FL_Cards'
 import FL_Icons from './FL_Icons/FL_Icons'
 import FL_Cloud from './FL_Cloud/FL_Cloud'
@@ -30,6 +30,7 @@ import FL_Definition from './FL_Definition/FL_Definition'
 import FL_Numbers from './FL_Numbers/FL_Numbers'
 import FL_Final from './FL_Final'
 import FL_Founder from './FL_Founder'
+import FL_Blogs from './FL_BLogs'
 
 import dynamic from 'next/dynamic'
 import { createDataAttribute } from 'next-sanity'
@@ -44,6 +45,7 @@ const MODULE_MAP = {
 	fl_numbers: FL_Numbers,
 	fl_final: FL_Final,
 	fl_founder: FL_Founder,
+	fl_blogs: FL_Blogs,
 
 	'accordion-list': AccordionList,
 	'blog-frontpage': BlogFrontpage,

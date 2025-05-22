@@ -1,0 +1,12 @@
+#mask-rect {
+	animation: reveal 3s forwards ease 2s;
+}
+
+@keyframes reveal {
+	from {
+		width: 0;
+	}
+	to {
+		width: 272px;
+	}
+}

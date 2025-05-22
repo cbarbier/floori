@@ -21,7 +21,7 @@ import TestimonialList from './TestimonialList'
 import TestimonialFeatured from './TestimonialFeatured'
 
 // floori
-import FL_Hero from './FL_Hero'
+import FL_Hero from './FL_Hero/FL_Hero'
 import FL_Cards from './FL_Cards/FL_Cards'
 import FL_Icons from './FL_Icons/FL_Icons'
 import FL_Cloud from './FL_Cloud/FL_Cloud'

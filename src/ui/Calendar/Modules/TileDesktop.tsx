@@ -11,6 +11,8 @@ export default function TileDesktop({
 	half,
 	color = 'blue',
 	breakword = false,
+	anim,
+	isInView,
 }: Partial<{
 	hour: string
 	text: string
@@ -21,6 +23,8 @@ export default function TileDesktop({
 	half: string
 	color: string
 	breakword: boolean
+	anim?: string
+	isInView: boolean
 }>) {
 	const colorMap: Record<string, any> = {
 		blue: {
@@ -53,6 +57,23 @@ export default function TileDesktop({
 	const c = colorMap[color] ?? colorMap.blue
 	// if (!c) return null
 
+	const animMap: Record<string, { x: string; y: string }> = {
+		fade: {
+			x: '0',
+			y: '0',
+		},
+		left: {
+			x: '-15rem',
+			y: '-15rem',
+		},
+		right: {
+			x: '15rem',
+			y: '-15rem',
+		},
+	}
+
+	const animConf = anim ? animMap[anim] : null
+
 	const width = half !== '0' ? 56 : 113
 	const height = 53 * duration + (duration > 1 ? duration * 1 : 0)
 	const delta = half === '2' ? 56 : 0
@@ -64,16 +85,25 @@ export default function TileDesktop({
 	const left = delta + 169 + 112.25 * (day - 1)
 	return (
 		<div
-			className={cn('absolute z-10 rounded-[3.14px] p-[0.296875rem]')}
-			style={{
-				borderLeft: `2px solid ${c.border}`,
-				top: `${top}px`,
-				left: `${left}px`,
-				backgroundColor: c.bg,
-				color: c.color,
-				width: `${width}px`,
-				height: `${height}px`,
-			}}
+			className={cn('absolute z-10 rounded-[3.14px] p-[0.296875rem]', {
+				'anim-trans': isInView && (anim === 'left' || anim === 'right'),
+				'anim-fade-out': isInView && anim,
+			})}
+			style={
+				{
+					borderLeft: `2px solid ${c.border}`,
+					top: `${top}px`,
+					left: `${left}px`,
+					backgroundColor: c.bg,
+					color: c.color,
+					width: `${width}px`,
+					height: `${height}px`,
+					'--x': animConf?.x ?? '0',
+					'--y': animConf?.y ?? '0',
+					'--delay-fadeout': '2s',
+					'--delay-translate': '2s',
+				} as React.CSSProperties
+			}
 		>
 			<div className="hour flex items-center gap-[0.395625rem]">
 				<div className="title font-inter text-[0.59375rem] font-[500]">

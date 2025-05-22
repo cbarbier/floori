@@ -1,4 +1,5 @@
 .hamb {
+	padding: 1rem;
 	& .line {
 		position: relative;
 		background-color: #0657de;

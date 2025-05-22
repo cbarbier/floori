@@ -2,42 +2,45 @@
 
 import { useTranslations } from 'next-intl'
 import TileDesktop from './TileDesktop'
+import { useInView } from '@/lib/useInView'
+import { RefObject, useCallback } from 'react'
 
 const config = require('./configCalendarDesktop.json')
 
-const buildTiles = (config: any, translate: any) => {
-	let day = 0
-	const tiles = config['CalendarDesktop'].flatMap((t: any) => {
-		if (!t.label) {
-			day++
-			return []
-		}
-
-		// if () {
-
-		// }
-		return [
-			<TileDesktop
-				key={`tile-desktop-${t.label}`}
-				day={day}
-				visio={t.translate}
-				text={translate(t.label)}
-				hour={t.hour}
-				half={t.half}
-				color={t.color}
-				duration={t.duration}
-				breakword={t.breakword}
-			/>,
-		]
-	})
-	return tiles
-}
-
 export default function CalendarDesktop() {
 	const t = useTranslations('CalendarText')
+	const { isInView, ref } = useInView(0.8)
 
+	const buildTiles = useCallback(
+		(config: any, translate: any) => {
+			let day = 0
+			const tiles = config['CalendarDesktop'].flatMap((t: any) => {
+				if (!t.label) {
+					day++
+					return []
+				}
+				return [
+					<TileDesktop
+						key={`tile-desktop-${t.label}`}
+						day={day}
+						visio={t.translate}
+						text={translate(t.label)}
+						hour={t.hour}
+						half={t.half}
+						color={t.color}
+						duration={t.duration}
+						breakword={t.breakword}
+						anim={t.anim}
+						isInView
+					/>,
+				]
+			})
+			return tiles
+		},
+		[isInView],
+	)
 	return (
-		<div className="wrapper anim-fade-to-b2 mx-auto w-fit">
+		<div ref={ref} className="wrapper mx-auto w-fit">
 			<div className="relative h-[543px] w-[861px]">
 				<div className="absolute top-0 left-0 w-[861px]">
 					<img src="/svg/calendar_desktop.svg" />

@@ -1,0 +1,12 @@
+.maskrect {
+	animation: revealcloud 3s forwards ease 2s;
+}
+
+@keyframes revealcloud {
+	from {
+		height: 0;
+	}
+	to {
+		height: 125px;
+	}
+}

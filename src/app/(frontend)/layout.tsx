@@ -5,6 +5,8 @@ import SkipToContent from '@/ui/SkipToContent'
 import Announcement from '@/ui/Announcement'
 import Header from '@/ui/header'
 import Footer from '@/ui/footer'
+import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google'
+
 import VisualEditingControls from '@/ui/VisualEditingControls'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
@@ -19,7 +21,8 @@ export default async function RootLayout({
 }) {
 	return (
 		<Root>
-			{/* <GoogleTagManager gtmId="" /> */}
+			<GoogleTagManager gtmId={process.env.GTM_ID!} />
+			<GoogleAnalytics gaId={process.env.GA_ID!} />
 			<body className="bg-seashell text-ink pt-5 antialiased sm:pt-2">
 				<NextIntlClientProvider>
 					<NuqsAdapter>

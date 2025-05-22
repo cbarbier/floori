@@ -18,6 +18,9 @@ export default async function processMetadata(
 		metadataBase: new URL(BASE_URL),
 		title,
 		description,
+		authors: [{ name: 'Naomi Gil' }],
+		keywords: 'RH, Ressources humaines, Paris, Droit social',
+		icons: 'https://www.floori.fr/favicon.ico',
 		openGraph: {
 			type: 'website',
 			url,

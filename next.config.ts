@@ -70,5 +70,4 @@ const baseConfig: NextConfig = {
 	// },
 } satisfies NextConfig
 
-// export default baseConfig
 export default withNextIntl(baseConfig)

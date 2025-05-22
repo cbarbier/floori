@@ -19,8 +19,8 @@ export default async function Header() {
 		<>
 			<Wrapper
 				className={cn(
-					'max-sm:header-open:shadow-lg absolute inset-0 top-[1.25rem] z-10 mx-auto w-[min(calc(100vw-2rem),58rem)] rounded-[1.5rem] bg-white p-3 sm:top-[2rem] sm:h-[77px]',
-					'anim-fade-to-t2',
+					'max-sm:header-open:shadow-lg absolute top-[1.25rem] left-1/2 z-10 w-[min(calc(100vw-2rem),58rem)] -translate-x-1/2 rounded-[1.5rem] bg-white p-3 sm:top-[2rem] sm:h-[77px]',
+					'anim-header',
 				)}
 			>
 				<div

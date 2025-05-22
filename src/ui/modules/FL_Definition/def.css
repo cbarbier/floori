@@ -1,0 +1,16 @@
+#deftitle span:last-of-type {
+	/* background-color: blue; */
+}
+
+#mask-rect5 {
+	animation: revealdef 3s forwards ease 2s;
+}
+
+@keyframes revealdef {
+	from {
+		width: 0;
+	}
+	to {
+		width: 380px;
+	}
+}

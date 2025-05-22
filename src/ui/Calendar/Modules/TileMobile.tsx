@@ -9,12 +9,16 @@ export default function TileMobile({
 	text,
 	color = 'blue',
 	breakword,
+	anim,
+	isInView,
 }: Partial<{
 	hour: string
 	end: string
 	text: string
 	color: string
 	breakword: boolean
+	isInView: boolean
+	anim?: string
 }>) {
 	const colorMap: Record<string, any> = {
 		blue: {
@@ -48,9 +52,20 @@ export default function TileMobile({
 
 	return (
 		<div className={cn('wrapper w-full py-3', css.tile)}>
-			<div className="inner flex h-[1.875rem] w-full justify-start">
+			<div
+				className={cn('inner flex h-[1.875rem] w-full justify-start', {
+					'anim-fade-out': color !== 'blue' && isInView,
+				})}
+				style={
+					{
+						'--x': '0',
+						'--y': '0',
+						'--delay-fadeout': '1s',
+					} as React.CSSProperties
+				}
+			>
 				<div
-					className="bordleft mr-[0.3125rem] h-full w-[2px]"
+					className={cn('bordleft mr-[0.3125rem] h-full w-[2px]')}
 					style={{
 						backgroundColor: c.border,
 					}}

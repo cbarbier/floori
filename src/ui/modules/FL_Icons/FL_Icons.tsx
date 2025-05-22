@@ -24,7 +24,7 @@ export default function FL_Icons({
 						const cardClass =
 							'font-inter max-w-[18.6875rem] flex flex-wrap justify-center p-2 items-center gap-[6.25rem] sm:gap-[3.5625rem] group'
 						return (
-							<FadeInSection key={'fl-icon-' + i} delay={`${0.7 * i}s`}>
+							<FadeInSection key={'fl-icon-' + i} delay={`${0.7 * (i + 1)}s`}>
 								<div>
 									<div className={cn(cardClass)}>
 										<Img
