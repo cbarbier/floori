@@ -28,7 +28,9 @@ export default function FL_Definition({
 	const { isInView, ref: viewRef } = useInView(0.5)
 	const [width, setWidth] = useState(ref?.current?.style?.width ?? 200)
 	const words = definition?.split(' ')
-	const lastWord = words?.pop()
+	const lastWord = [words?.pop(), words?.pop(), words?.pop()]
+		.reverse()
+		.join('\u00A0')
 
 	useEffect(() => {
 		if (!ref.current) return
@@ -42,8 +44,8 @@ export default function FL_Definition({
 			className={cn('bg-crab text-seashell')}
 			{...moduleProps(props)}
 		>
-			<div className="section mx-auto flex w-fit flex-col px-0 pb-[3.4375rem] sm:pb-[6.875rem]">
-				<div className={cn('relative mb-[1.9375rem] text-center sm:mb-[3rem]')}>
+			<div className="section mx-auto flex w-fit flex-col px-0">
+				<div className={cn('relative mb-[1.9375rem] text-center')}>
 					<div
 						id="deftitle"
 						className="font-cdis max-w-screen-lg text-[1.375rem] font-bold sm:text-[1.75rem]"
@@ -88,11 +90,16 @@ export default function FL_Definition({
 					</div>
 				</div>
 
-				<div className="font-inter mx-auto mb-3 w-[min(100vw,37.125rem)] text-center text-[1rem] leading-[1rem] sm:leading-[1.6875rem]">
-					<p className={cn('mb-[3rem]')}>{text}</p>
+				<div className="font-inter mx-auto mb-3 w-[min(calc(100vw-2rem),37.125rem)] text-center text-[1rem] leading-[1rem] sm:leading-[1.6875rem]">
+					<p className={cn('mb-[1.5rem]')}>{text}</p>
 					<p className={cn()}>{text2}</p>
 				</div>
-				{cta && <CTAList ctas={[cta]} className={cn('justify-center')} />}
+				{cta && (
+					<CTAList
+						ctas={[cta]}
+						className={cn('mx-auto w-fit justify-center pt-8')}
+					/>
+				)}
 			</div>
 		</section>
 	)

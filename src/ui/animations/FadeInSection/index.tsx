@@ -10,15 +10,26 @@ interface Props {
 	delay?: string
 	y?: string
 	x?: string
+	className?: string
 }
 
-export const FadeInSection: React.FC<Props> = ({ children, delay, y, x }) => {
+export const FadeInSection: React.FC<Props> = ({
+	children,
+	className,
+	delay,
+	y,
+	x,
+}) => {
 	const { ref, isInView } = useInView()
 
 	return (
 		<div
 			ref={ref}
-			className={cn(css.fadeinsection, isInView ? css.isvisible : null)}
+			className={cn(
+				css.fadeinsection,
+				isInView ? css.isvisible : null,
+				className,
+			)}
 			style={
 				{
 					'--y': y ?? '0px',

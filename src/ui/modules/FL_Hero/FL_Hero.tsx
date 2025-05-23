@@ -107,7 +107,10 @@ export default function FL_Hero({
 						<CustomPortableText value={subtitle} />
 					</div>
 					{cta && (
-						<CTAList ctas={[cta]} className={cn('!mt-4 justify-center')} />
+						<CTAList
+							ctas={[cta]}
+							className={cn('mx-auto w-fit justify-center py-8')}
+						/>
 					)}
 				</div>
 			</div>

@@ -15,11 +15,11 @@ export default async function Footer() {
 	return (
 		<FadeInSection y={'400px'}>
 			<footer
-				className="bg-deepocean text-seashell sm-px-8 px-4"
+				className="bg-vistablue text-seashell sm-px-8 px-4"
 				role="contentinfo"
 			>
-				<div className="section flex flex-wrap items-center justify-start gap-x-12 gap-y-8 max-sm:flex-col">
-					<div className="mr-auto flex flex-col gap-3 self-stretch">
+				<div className="section flex flex-wrap items-center justify-start gap-x-12 gap-y-8 py-2 max-sm:flex-col sm:h-[5.5rem]">
+					<div className="flex flex-col gap-3 sm:mr-auto">
 						<Link className="h3 md:h2 max-w-max" href="/">
 							{logoImage ? (
 								<Img

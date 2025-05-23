@@ -18,11 +18,11 @@ export default function FL_Icons({
 	return (
 		<section className={cn('bg-creamy')} {...moduleProps(props)}>
 			<div className="section mx-auto flex w-fit flex-col">
-				<div className="cards mx-auto mb-[2.375rem] flex w-fit flex-wrap justify-center gap-[1.25rem] sm:mb-[3.6875rem] sm:gap-[1.375]">
+				<div className="cards mx-auto flex w-fit flex-wrap justify-center gap-[1.25rem] sm:gap-[1.375]">
 					{icons?.map((icon, i) => {
 						// <Card key={'fl-card-' + i} data={c} />
 						const cardClass =
-							'font-inter max-w-[18.6875rem] flex flex-wrap justify-center p-2 items-center gap-[6.25rem] sm:gap-[3.5625rem] group'
+							'font-inter max-w-[18.6875rem] flex flex-wrap justify-center p-2 items-center gap-[3.5625rem] group'
 						return (
 							<FadeInSection key={'fl-icon-' + i} delay={`${0.7 * (i + 1)}s`}>
 								<div>

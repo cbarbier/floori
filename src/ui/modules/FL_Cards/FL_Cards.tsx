@@ -11,6 +11,8 @@ import { useEffect, useRef } from 'react'
 import Flowers from './Flowers'
 import { useIsMobile } from '@/lib/useIsMobile'
 import './cards.css'
+import { useInView } from '@/lib/useInView'
+import { FadeInSection } from '@/ui/animations/FadeInSection'
 
 export default function FL_Cards({
 	title,
@@ -26,27 +28,6 @@ export default function FL_Cards({
 }> &
 	Sanity.Module) {
 	const isMobile = useIsMobile()
-	const ref = useRef<HTMLDivElement>(null)
-
-	useEffect(() => {
-		if (!ref.current) return
-
-		const targetSpans = document.querySelectorAll(
-			'#cardtitle *:first-child span:first-of-type',
-		)
-		const targetSpan = targetSpans[0]
-		console.log(targetSpan, targetSpan.clientTop)
-
-		if (targetSpan && targetSpan.parentNode) {
-			const wrapper = document.createElement('span')
-			wrapper.style.position = 'relative'
-			wrapper.style.display = 'inline-block'
-
-			const ret = targetSpan.parentNode.insertBefore(ref.current, targetSpan)
-			// wrapper.appendChild(targetSpan)
-			console.log(ret)
-		}
-	})
 
 	useEffect(() => {
 		const targetSpans = document.querySelectorAll(
@@ -128,7 +109,7 @@ export default function FL_Cards({
 			svg.setAttribute('height', '16')
 			svg.setAttribute('viewBox', `0 0 ${spanWidth} 16`)
 			svg.setAttribute('fill', 'none')
-			// svg.classList.add('relative', 'z-10', 'top-3', 'sm:top-6')
+			svg.classList.add('relative', 'z-10', 'top-1')
 			svg.innerHTML = `
 				<mask id="draw-mask3">
 				<rect
@@ -177,14 +158,15 @@ export default function FL_Cards({
 					</div>
 				</div>
 				<div
-					ref={ref}
 					className={cn(
-						'relative right-[1.5rem] bottom-[1.5rem] inline-block w-fit max-sm:top-[10rem]',
+						'absolute top-0 left-8 inline-block w-fit sm:left-[15%]',
 					)}
 				>
-					<Flowers />
+					<FadeInSection x={'-200px'}>
+						<Flowers />
+					</FadeInSection>
 				</div>
-				<div className="cards mx-auto mb-[2.375rem] flex w-fit flex-wrap justify-center gap-[1.25rem] sm:mb-[3.6875rem] sm:gap-[1.375]">
+				<div className="cards mx-auto mb-[2.375rem] flex w-fit flex-wrap justify-center gap-[1.25rem] sm:mb-[3.6875rem] sm:gap-[1.375rem]">
 					{cards?.map((c, i) => {
 						// <Card key={'fl-card-' + i} data={c} />
 						const cardClass =
@@ -203,7 +185,7 @@ export default function FL_Cards({
 											<div className={cn(cardClass)}>{c.front}</div>
 										</div>
 										<div
-											className="absolute flex h-full w-full rotate-y-180 transform flex-col items-center justify-center rounded-[2.5rem] border border-[#D1BCB2] text-white backface-hidden"
+											className="absolute flex h-full w-full rotate-y-180 transform flex-col items-center justify-start gap-8 rounded-[2.5rem] border border-[#D1BCB2] p-6 text-white backface-hidden"
 											style={{
 												backgroundColor: c.color.hex,
 											}}
@@ -217,7 +199,12 @@ export default function FL_Cards({
 						)
 					})}
 				</div>
-				{cta && <CTAList ctas={[cta]} className={cn('!mt-4 justify-center')} />}
+				{cta && (
+					<CTAList
+						ctas={[cta]}
+						className={cn('mx-auto w-fit justify-center py-8')}
+					/>
+				)}
 			</div>
 		</section>
 	)
