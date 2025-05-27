@@ -44,7 +44,7 @@ export default function FL_Hero({
 			svg.setAttribute('height', '23')
 			svg.setAttribute('view-box', `0 0 ${spanWidth} 23`)
 			svg.setAttribute('fill', 'none')
-			svg.classList.add('relative', 'z-10', 'top-7', 'sm:top-12')
+			svg.classList.add('relative', 'z-10', 'top-9', 'sm:top-[3.125rem]')
 			svg.innerHTML = `
 			<mask id="draw-mask">
 			<rect
@@ -100,16 +100,16 @@ export default function FL_Hero({
 				<div
 					className={cn('richtext m-automax-w-xl relative isolate text-center')}
 				>
-					<div id="herotitle" className="mx-auto">
+					<div id="herotitle" className="mx-auto mb-[3rem]">
 						<CustomPortableText value={title} />
 					</div>
-					<div className="font-inter mb-[2.875rem] sm:mb-[4.375rem]">
+					<div className="font-inter">
 						<CustomPortableText value={subtitle} />
 					</div>
 					{cta && (
 						<CTAList
 							ctas={[cta]}
-							className={cn('mx-auto w-fit justify-center py-8')}
+							className={cn('mx-auto w-fit justify-center pt-8')}
 						/>
 					)}
 				</div>

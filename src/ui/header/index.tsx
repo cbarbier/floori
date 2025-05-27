@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils'
 import css from './Header.module.css'
 import FL_LanguageSwitcher from '../LanguageSwitcher/FL_LanguageSwitcher'
 import { FadeInSection } from '../animations/FadeInSection'
+import HeaderLogo from './HeaderLogo'
 
 export default async function Header() {
 	const { title, logo, ctas } = await getSite()
@@ -33,11 +34,14 @@ export default async function Header() {
 					<div className="[grid-area:logo]">
 						<Link className={cn('h4 sm:h3 grid')} href="/">
 							{logoImage ? (
-								<Img
-									className="mx-auto inline-block max-h-[53px] w-fit"
-									image={logoImage}
-									alt={logo?.name || title}
-								/>
+								// <Img
+								// 	className="mx-auto inline-block max-h-[53px] w-fit"
+								// 	image={logoImage}
+								// 	alt={logo?.name || title}
+								// />
+								<div className="mx-auto inline-block aspect-[641/347] max-h-[53px] w-fit">
+									<HeaderLogo />
+								</div>
 							) : (
 								<span className="text-gradient">{title}</span>
 							)}

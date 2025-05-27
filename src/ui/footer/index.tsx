@@ -6,6 +6,7 @@ import { PortableText } from 'next-sanity'
 import Link from 'next/link'
 import { Img } from '@/ui/Img'
 import { FadeInSection } from '../animations/FadeInSection'
+import FooterLogo from './FooterLogo'
 
 export default async function Footer() {
 	const { title, blurb, logo, copyright } = await getSite()
@@ -22,11 +23,14 @@ export default async function Footer() {
 					<div className="flex flex-col gap-3 sm:mr-auto">
 						<Link className="h3 md:h2 max-w-max" href="/">
 							{logoImage ? (
-								<Img
-									className="max-h-[1.5em] w-auto"
-									image={logoImage}
-									alt={logo?.name || title}
-								/>
+								// <Img
+								// 	className="max-h-[1.5em] w-auto"
+								// 	image={logoImage}
+								// 	alt={logo?.name || title}
+								// />
+								<div className="aspect-[621/348] max-h-[1.5em] w-auto">
+									<FooterLogo />
+								</div>
 							) : (
 								title
 							)}
