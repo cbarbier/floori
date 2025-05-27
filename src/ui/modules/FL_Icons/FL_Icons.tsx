@@ -29,7 +29,7 @@ export default function FL_Icons({
 									<div className={cn(cardClass)}>
 										<Img
 											image={icon.image}
-											className="group-hover:animate-bounce"
+											className="ease-[cubic-bezier(0.34, 1.56, 0.64, 1)] transition-transform duration-500 group-hover:-translate-y-5 group-hover:scale-105"
 										/>
 										<CustomPortableText
 											value={icon.text}

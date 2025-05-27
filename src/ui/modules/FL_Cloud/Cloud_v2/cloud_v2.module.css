@@ -1,0 +1,9 @@
+.divs {
+	text-align: center;
+	scroll-snap-align: center;
+	flex: none;
+}
+
+.xsnap {
+	scroll-snap-type: x mandatory;
+}
