@@ -17,7 +17,8 @@
 	--color-darkseashell: #d1bcb2;
 
 	--font-cdis: 'Clash Display', 'sans-serif';
-	--font-inter: 'Inter', 'sans-serif';
+	/* --font-inter: 'Inter', 'sans-serif'; */
+	--font-inter: 'Sora', 'sans-serif';
 
 	--max-height-fold: calc(100svh - var(--header-height));
 
@@ -376,6 +377,37 @@
 
 	&::-webkit-scrollbar {
 		display: none;
+	}
+}
+
+@utility scrollbar-custom {
+	--scroll-color: var(--color-creamy);
+	--scroll-thumb-color: #f1f1f1;
+	--scroll-width: 2px;
+
+	scrollbar-width: thin;
+	scrollbar-color: var(--scroll-thumb-color) var(--scroll-color);
+
+	& ::-webkit-scrollbar {
+		width: var(--scroll-width);
+		border-radius: 5px;
+	}
+
+	& ::-webkit-scrollbar-track {
+		background-color: var(--scroll-color);
+		width: var(--scroll-width);
+		height: 40px;
+		border-radius: 5px;
+		margin: 2px;
+	}
+
+	& ::-webkit-scrollbar-thumb {
+		background-color: var(--scroll-thumb-color);
+		border-radius: 5px;
+	}
+
+	& ::-webkit-scrollbar-thumb:hover {
+		background-color: #555;
 	}
 }
 

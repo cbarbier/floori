@@ -34,5 +34,9 @@
 
 		"cmd1": "Jeudi — 24 SEPT.",
 		"cmd2": "Vendredi — 24 SEPT."
+	},
+
+	"Blog": {
+		"tableofcontent": "Table des matières"
 	}
 }

@@ -17,11 +17,13 @@ export default function FL_Hero({
 	title,
 	subtitle,
 	cta,
+	calendar,
 	...props
 }: Partial<{
 	title: any
 	subtitle: any
 	cta: Sanity.CTA
+	calendar: boolean
 }> &
 	Sanity.Module) {
 	const isMobile = useIsMobile()
@@ -86,7 +88,7 @@ export default function FL_Hero({
 			)}
 			{...moduleProps(props)}
 		>
-			<div className="section relative mx-auto flex w-fit flex-col text-balance">
+			<div className="section relative flex w-fit flex-col text-balance">
 				<div className="absolute top-[90px] right-4">
 					<FadeInSection delay={'0.7s'} x={'200px'}>
 						<Image
@@ -103,9 +105,11 @@ export default function FL_Hero({
 					<div id="herotitle" className="mx-auto mb-[3rem]">
 						<CustomPortableText value={title} />
 					</div>
-					<div className="font-inter">
-						<CustomPortableText value={subtitle} />
-					</div>
+					{subtitle && (
+						<div className="font-inter">
+							<CustomPortableText value={subtitle} />
+						</div>
+					)}
 					{cta && (
 						<CTAList
 							ctas={[cta]}
@@ -114,7 +118,7 @@ export default function FL_Hero({
 					)}
 				</div>
 			</div>
-			<Calendar />
+			{calendar && <Calendar />}
 		</section>
 	)
 }

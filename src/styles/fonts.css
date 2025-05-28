@@ -29,3 +29,19 @@
 	font-weight: 700;
 	src: url('/fonts/Inter_18pt-Bold.ttf') format('truetype');
 }
+
+@font-face {
+	font-family: 'Sora';
+	font-style: normal;
+	font-display: auto;
+	font-weight: 400;
+	src: url('/fonts/Sora-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Sora';
+	font-style: normal;
+	font-display: auto;
+	font-weight: 700;
+	src: url('/fonts/Sora-Bold.ttf') format('truetype');
+}

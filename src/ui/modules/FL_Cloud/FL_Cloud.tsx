@@ -21,7 +21,7 @@ export default function FL_Cloud({
 	console.log('phrases', phrases)
 	return (
 		<section className={cn('')} {...moduleProps(props)}>
-			<div className="section mx-auto flex w-fit flex-col px-0">
+			<div className="section mx-auto flex w-fit flex-col">
 				<div
 					className={cn('richtext m-automax-w-xl relative isolate text-center')}
 				>

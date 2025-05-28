@@ -74,6 +74,12 @@ export default defineType({
 			type: 'cta',
 			group: 'content',
 		}),
+		defineField({
+			name: 'calendar',
+			type: 'boolean',
+			group: 'options',
+			initialValue: true,
+		}),
 	],
 	preview: {
 		select: {

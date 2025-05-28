@@ -22,7 +22,7 @@ export default function FL_Founder({
 					className={cn(
 						'relative',
 						'overflow-hidden rounded-[1.25rem] sm:rounded-[3.125rem]',
-						'aspect-ratio-[349/283] w-[calc(100%-2rem)]',
+						'aspect-ratio-[349/283] w-full',
 						'sm:aspect-ratio-[591/692] relative sm:w-[calc(50%-3.5625rem/2)]',
 					)}
 				>
@@ -50,7 +50,7 @@ export default function FL_Founder({
 						/>
 					)}
 				</div>
-				<div className="w-[calc(100%-2rem)] sm:w-[calc(50%-6.5625rem/2)]">
+				<div className="w-[calc(100%)] sm:w-[calc(50%-6.5625rem/2)]">
 					<svg
 						width="42"
 						height="32"

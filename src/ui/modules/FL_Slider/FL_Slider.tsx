@@ -18,7 +18,7 @@ export default function FL_Slider({
 	console.log('slides', slides)
 	return (
 		<section className={cn('bg-creamy')} {...moduleProps(props)}>
-			<div className="section mx-auto flex w-fit flex-col px-0 pb-[3.4375rem] sm:pb-[6.875rem]">
+			<div className="section mx-auto flex w-fit flex-col">
 				<div
 					className={cn('richtext m-automax-w-xl relative isolate text-center')}
 				>

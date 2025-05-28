@@ -22,8 +22,11 @@ export default function Cloud_v2({
 		const cards = Array.from(slider.querySelectorAll('.phrase'))
 		const cardCount = cards.length
 
-		cards.forEach((card) => {
-			slider.insertBefore(card.cloneNode(true), slider.firstChild)
+		cards.forEach((card, i, arr) => {
+			slider.insertBefore(
+				cards[arr.length - 1 - i].cloneNode(true),
+				slider.firstChild,
+			)
 			slider.appendChild(card.cloneNode(true))
 		})
 
