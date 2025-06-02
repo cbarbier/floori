@@ -19,7 +19,7 @@ export default function Review({
 	return (
 		<div
 			className={cn(
-				'wrapper border-darkseashell bg-seashell font-sora relative grid h-[17.1875rem] min-w-[min(100%-1rem,24.875rem)] place-content-center rounded-[1.25rem] border p-6 px-6 text-center text-[1rem] transition-all duration-300',
+				'wrapper border-darkseashell bg-seashell font-inter relative grid h-[17.1875rem] min-w-[min(100%-1rem,24.875rem)] place-content-center rounded-[1.25rem] border p-6 px-6 text-center text-[1rem] transition-all duration-300',
 				{
 					'h-[23.8125rem]': starred,
 				},

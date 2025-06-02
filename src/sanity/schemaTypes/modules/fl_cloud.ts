@@ -3,7 +3,7 @@ import { TfiLayoutCtaCenter } from 'react-icons/tfi'
 import { getBlockText } from 'sanitypress-utils'
 import { VscHome } from 'react-icons/vsc'
 import { count } from '@/lib/utils'
-import { colorField } from '../fragments'
+import richtextBuilder from '../fragments/richtext'
 
 export default defineType({
 	name: 'fl_cloud',
@@ -64,6 +64,7 @@ export default defineType({
 			],
 			group: 'content',
 		}),
+		richtextBuilder('text', 'content'),
 		defineField({
 			name: 'subtitle',
 			type: 'array',

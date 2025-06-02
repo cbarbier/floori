@@ -206,11 +206,24 @@ export default function Slides({
 						{
 							// 'cursor-not-allowed': !currentIndex,
 						},
-						'bg-vistablue aspect-square w-[2.5rem] self-center rounded-full text-white disabled:bg-[#cedced]',
+						'aspect-square w-[2.5rem] self-center rounded-full text-white disabled:bg-[#cedced]',
 					)}
 					// disabled={!currentIndex}
 				>
-					{'◀'}
+					<svg
+						fill="#85aff9"
+						height="42px"
+						width="42px"
+						version="1.1"
+						id="Icons"
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 32 32"
+					>
+						<path
+							d="M21,2H11c-5,0-9,4-9,9v10c0,5,4,9,9,9h10c5,0,9-4,9-9V11C30,6,26,2,21,2z M18.7,20.3c0.4,0.4,0.4,1,0,1.4
+	C18.5,21.9,18.3,22,18,22s-0.5-0.1-0.7-0.3l-5-5c-0.4-0.4-0.4-1,0-1.4l5-5c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4L14.4,16L18.7,20.3z"
+						/>
+					</svg>
 				</button>
 			)}
 			<div
@@ -250,8 +263,8 @@ export default function Slides({
 								key={`slide-${slide._key}-${i}`}
 								starred
 								className={cn('slide snap-center', {
-									'border-vistablue': currentIndex === i,
-									// 'scale-90': !isMobile && currentIndex !== i,
+									// 'border-vistablue': currentIndex === i,
+									'scale-90': !isMobile && currentIndex !== i,
 								})}
 							/>
 						)
@@ -265,11 +278,24 @@ export default function Slides({
 						{
 							// 'cursor-not-allowed': currentIndex == phrases.length - 1,
 						},
-						'bg-vistablue aspect-square w-[2.5rem] self-center rounded-full text-white disabled:bg-[#cedced]',
+						'aspect-square w-[2.5rem] rotate-180 self-center rounded-full text-white disabled:bg-[#cedced]',
 					)}
 					// disabled={currentIndex == phrases.length - 1}
 				>
-					{'▶'}
+					<svg
+						fill="#85aff9"
+						height="42px"
+						width="42px"
+						version="1.1"
+						id="Icons"
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 32 32"
+					>
+						<path
+							d="M21,2H11c-5,0-9,4-9,9v10c0,5,4,9,9,9h10c5,0,9-4,9-9V11C30,6,26,2,21,2z M18.7,20.3c0.4,0.4,0.4,1,0,1.4
+	C18.5,21.9,18.3,22,18,22s-0.5-0.1-0.7-0.3l-5-5c-0.4-0.4-0.4-1,0-1.4l5-5c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4L14.4,16L18.7,20.3z"
+						/>
+					</svg>
 				</button>
 			)}
 		</div>

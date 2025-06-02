@@ -23,10 +23,10 @@ export default function Skill({
 				className,
 			)}
 		>
-			<div className="title font-sora mb-[1rem] text-[1rem] font-bold">
+			<div className="title font-inter mb-[1rem] text-[1rem] font-bold">
 				{title}
 			</div>
-			<div className="text">{text}</div>
+			<div className="text font-inter">{text}</div>
 		</div>
 	)
 }

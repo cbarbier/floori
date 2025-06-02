@@ -68,7 +68,10 @@ export default function FL_Cards({
 											}}
 										>
 											<div className={cn(cardClass)}>{c.front}</div>
-											<CustomPortableText className={css.back} value={c.back} />
+											<CustomPortableText
+												className={cn(css.back, 'font-inter')}
+												value={c.back}
+											/>
 										</div>
 									</div>
 								</div>

@@ -9,10 +9,12 @@ import { FadeInSection } from '@/ui/animations/FadeInSection'
 export default function FL_Cloud({
 	title,
 	subtitle,
+	text,
 	phrases,
 	...props
 }: Partial<{
 	title: any
+	text: any
 	subtitle: any
 	phrases: String[]
 	cta: Sanity.CTA
@@ -22,12 +24,15 @@ export default function FL_Cloud({
 	return (
 		<section className={cn('bg-creamy')} {...moduleProps(props)}>
 			<div className="section header-w mx-auto flex flex-col">
-				<div
-					className={cn('richtext m-automax-w-xl relative isolate text-center')}
-				>
+				<div className={cn('richtext relative isolate text-center')}>
 					<div className="mb-[1.25rem] sm:mb-[1.5rem]">
 						<CustomPortableText value={title} />
 					</div>
+					{text && (
+						<div className="mb-[1.25rem] sm:mb-[1.5rem]">
+							<CustomPortableText value={text} />
+						</div>
+					)}
 				</div>
 				<Cloud_v2 phrases={phrases} />
 
@@ -40,7 +45,7 @@ export default function FL_Cloud({
 					className={cn('richtext m-automax-w-xl relative isolate text-center')}
 				>
 					<FadeInSection delay="4s">
-						<div className="font-sora text-butterschotch mb-[2.875rem] max-w-screen overflow-x-hidden text-[1.5rem] sm:mb-[4.375rem]">
+						<div className="font-cdis text-butterschotch mb-[2.875rem] max-w-screen overflow-x-hidden text-[1.5rem] sm:mb-[4.375rem]">
 							<CustomPortableText value={subtitle} />
 						</div>
 					</FadeInSection>
