@@ -1,5 +1,6 @@
 import { defineField, defineType } from 'sanity'
 import { VscTag } from 'react-icons/vsc'
+import colorField from '../fragments/colorField'
 
 export default defineType({
 	name: 'blog.category',
@@ -20,5 +21,6 @@ export default defineType({
 			},
 			validation: (Rule) => Rule.required(),
 		}),
+		colorField,
 	],
 })

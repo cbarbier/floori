@@ -11,6 +11,7 @@ import { Suspense } from 'react'
 import PostPreview from '../PostPreview'
 import List from './List'
 import { cn } from '@/lib/utils'
+import PostPreviewLarge from '../PostPreviewLarge'
 
 export default async function BlogList({
 	pretitle,

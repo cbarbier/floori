@@ -11,3 +11,9 @@
 .flipcard {
 	transition-delay: 0.4s; /* delay on hover out */
 }
+
+.back {
+	ul {
+		text-align: left;
+	}
+}

@@ -1,0 +1,16 @@
+.animcard {
+	&:hover {
+		animation-name: animcardblog;
+		animation-duration: 700ms;
+		animation-timing-function: ease-out;
+	}
+}
+
+@keyframes animcardblog {
+	0% {
+		background-color: transparent;
+	}
+	70% {
+		background-color: var(--color-creamy);
+	}
+}

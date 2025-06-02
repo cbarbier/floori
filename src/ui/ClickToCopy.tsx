@@ -9,15 +9,20 @@ export default function ClickToCopy({
 	className,
 	children = <VscCopy />,
 	childrenWhenCopied = <VscCheck />,
+	childrenWhenHover = <VscCopy />,
 	...props
 }: {
 	value?: string
 	childrenWhenCopied?: React.ReactNode
+	childrenWhenHover?: React.ReactNode
 } & ComponentProps<'button'>) {
+	const [hovered, setHovered] = useState(false)
 	const [copied, setCopied] = useState(false)
 
 	return (
 		<button
+			onMouseEnter={() => setHovered(true)}
+			onMouseLeave={() => setHovered(false)}
 			className={cn('cursor-copy', copied && 'pointer-events-none', className)}
 			onClick={() => {
 				if (typeof window === 'undefined' || !value) return
@@ -30,7 +35,7 @@ export default function ClickToCopy({
 			title="Click to copy"
 			{...props}
 		>
-			{copied ? childrenWhenCopied : children}
+			{copied ? childrenWhenCopied : hovered ? childrenWhenHover : children}
 		</button>
 	)
 }

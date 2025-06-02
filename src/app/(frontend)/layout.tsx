@@ -23,16 +23,21 @@ export default async function RootLayout({
 		<Root>
 			<GoogleTagManager gtmId={process.env.GTM_ID!} />
 			<GoogleAnalytics gaId={process.env.GA_ID!} />
-			<body className="bg-seashell text-ink pt-5 antialiased sm:pt-2">
+			<body className="bg-seashell text-ink min-h-screen pt-5 antialiased sm:pt-2">
 				<NextIntlClientProvider>
 					<NuqsAdapter>
 						<SkipToContent />
 						<Announcement />
 						<Header />
-						<main id="main-content" role="main" tabIndex={-1}>
+						<main
+							id="main-content"
+							role="main"
+							tabIndex={-1}
+							className="flex min-h-screen flex-col"
+						>
 							{children}
+							{/* <Footer /> */}
 						</main>
-						<Footer />
 
 						<VisualEditingControls />
 					</NuqsAdapter>

@@ -4,13 +4,13 @@ import { fetchSanityLive } from '@/sanity/lib/fetch'
 import { groq } from 'next-sanity'
 import { IMAGE_QUERY } from '@/sanity/lib/queries'
 import moduleProps from '@/lib/moduleProps'
-import Pretitle from '@/ui/Pretitle'
 import { PortableText, stegaClean } from 'next-sanity'
 import FilterList from '@/ui/modules/blog/BlogList/FilterList'
 import { Suspense } from 'react'
 import PostPreview from '../blog/PostPreview'
 import List from './List'
 import { cn } from '@/lib/utils'
+import FL_PostPreviewLarge from '../blog/FL_PostPreviewLarge'
 
 export default async function FL_Blogs({
 	pretitle,
@@ -69,6 +69,8 @@ export default async function FL_Blogs({
 			: 'carousel max-xl:full-bleed md:overflow-fade-r pb-4 [--size:320px] max-xl:px-4',
 	)
 
+	const featuredPost = posts.find((x) => x.featured) ?? posts?.[0]
+
 	return (
 		<section
 			className="section space-y-8 pt-[9.25rem] pb-[3.875rem] sm:pt-[10.1875rem] sm:pb-[4.125rem]"
@@ -83,6 +85,8 @@ export default async function FL_Blogs({
 
 			{displayFilters && !filteredCategory && <FilterList />}
 
+			{featuredPost && <FL_PostPreviewLarge post={featuredPost} />}
+
 			<h2 className="h2">{lastarticle}</h2>
 			<Suspense
 				fallback={
@@ -96,9 +100,10 @@ export default async function FL_Blogs({
 				}
 			>
 				<List
-					posts={Array(10)
-						.fill(0)
-						.map((p, i) => ({ ...posts[0], _id: posts[0]._id + i }))}
+					posts={posts}
+					// posts={Array(10)
+					// 	.fill(0)
+					// 	.map((p, i) => ({ ...posts[0], _id: posts[0]._id + i }))}
 					className={listClassName}
 				/>
 			</Suspense>

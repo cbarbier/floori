@@ -1,6 +1,6 @@
 {
 	"name": "floori",
-	"version": "7.1.14",
+	"version": "1.0.0",
 	"description": "An HR conslulting website with Next.js 15 and Tailwind 4",
 	"author": "cbarbier <cbarbier@outlook.fr>",
 	"license": "ISC",

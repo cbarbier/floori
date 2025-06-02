@@ -10,7 +10,7 @@ export default function ({
 	return {
 		id: stegaClean(options?.uid) || 'module-' + _key,
 		'data-module': _type,
-		hidden: !dev && options?.hidden,
+		hidden: options?.hidden,
 		...props,
 	}
 }

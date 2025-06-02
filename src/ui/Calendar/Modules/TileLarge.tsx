@@ -105,8 +105,8 @@ export default function TileLarge({
 					height: `${height}px`,
 					'--x': animConf?.x ?? '0',
 					'--y': animConf?.y ?? '0',
-					'--delay-fadeout': '2s',
-					'--delay-translate': '2s',
+					'--delay-fadeout': '500ms',
+					'--delay-translate': '500ms',
 				} as React.CSSProperties
 			}
 		>

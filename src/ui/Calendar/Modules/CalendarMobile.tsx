@@ -11,7 +11,7 @@ const config = require('./configCalendarMobile.json')
 
 export default function CalendarMobile() {
 	const t = useTranslations('CalendarText')
-	const { isInView, ref } = useInView(0.8)
+	const { isInView, ref } = useInView(1)
 
 	const buildTiles = useCallback(
 		(config: any, translate: any) => {
@@ -48,8 +48,8 @@ export default function CalendarMobile() {
 		[isInView],
 	)
 	return (
-		<div ref={ref} className="wrapper anim-fade-to-b2 mx-auto w-fit">
-			<div className="relative w-fit">
+		<div className="wrapper anim-fade-to-b2 mx-auto w-fit">
+			<div ref={ref} className={cn('relative h-[575px] w-[320px]')}>
 				<div className={cn(css.calendar)}>{buildTiles(config, t)}</div>
 			</div>
 		</div>

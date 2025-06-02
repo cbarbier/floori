@@ -3,6 +3,7 @@ import { TfiLayoutCtaCenter } from 'react-icons/tfi'
 import { getBlockText } from 'sanitypress-utils'
 import { VscHome } from 'react-icons/vsc'
 import { count } from '@/lib/utils'
+import { imageBlock } from '../fragments'
 
 export default defineType({
 	name: 'fl_slider',
@@ -80,6 +81,13 @@ export default defineType({
 							name: 'sign',
 							title: 'signature',
 							type: 'string',
+						}),
+						defineField({
+							name: 'image',
+							type: 'image',
+							options: {
+								hotspot: true,
+							},
 						}),
 					],
 				},

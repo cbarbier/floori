@@ -47,6 +47,11 @@ export default defineType({
 			group: 'info',
 		}),
 		defineField({
+			name: 'email',
+			type: 'string',
+			group: 'info',
+		}),
+		defineField({
 			name: 'ctas',
 			title: 'Call-to-action (global)',
 			description: 'Typically used in the header and/or footer.',

@@ -50,7 +50,7 @@ export default function FL_Founder({
 						/>
 					)}
 				</div>
-				<div className="w-[calc(100%)] sm:w-[calc(50%-6.5625rem/2)]">
+				<div className="w-full sm:w-[calc(50%-6.5625rem/2)]">
 					<svg
 						width="42"
 						height="32"
@@ -65,10 +65,8 @@ export default function FL_Founder({
 						/>
 					</svg>
 
-					<div
-						className={cn('richtext m-automax-w-xl relative isolate text-left')}
-					>
-						<CustomPortableText value={bio} />
+					<div className={cn('relative')}>
+						<CustomPortableText className="text-justify" value={bio} />
 					</div>
 				</div>
 			</div>

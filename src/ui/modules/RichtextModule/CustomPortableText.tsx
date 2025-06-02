@@ -1,12 +1,22 @@
+'use client'
+
 import { cn } from '@/lib/utils'
 import { PortableText } from 'next-sanity'
+import CardUnderline from './CardUnderline'
+import HeroUnderline from './HeroUnderline'
+import AsterixFlower from './AsterixFlower'
+import { useInView } from '@/lib/useInView'
+import Rays from './Rays'
+import DoubleFlower from './DoubleFlower'
 
 export default function CustomPortableText({
 	value,
 	className,
 }: { value: any } & React.ComponentProps<'div'>) {
+	const { ref, isInView } = useInView(1)
 	return (
 		<div className={cn('mx-auto', className)}>
+			<div ref={ref} className="muck h-2"></div>
 			<PortableText
 				value={value}
 				components={{
@@ -26,6 +36,23 @@ export default function CustomPortableText({
 							<span style={{ color: 'rgba(255, 255, 255, 0.6)' }}>
 								{children}
 							</span>
+						),
+						doubleflower: DoubleFlower,
+						asterixflower: AsterixFlower,
+						herounderline: HeroUnderline,
+						cardunderline: ({ children, ...props }) => (
+							<CardUnderline {...props} isInView={isInView}>
+								{children}
+							</CardUnderline>
+						),
+						rays: Rays,
+					},
+					list: {
+						bullet: ({ children }) => (
+							<ul className="list-disc pl-6">{children}</ul>
+						),
+						number: ({ children }) => (
+							<ol className="list-decimal pl-6">{children}</ol>
 						),
 					},
 					block: {

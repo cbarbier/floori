@@ -2,7 +2,8 @@
 	box-shadow: 0px 0px 10px 0px #00000026;
 	border-radius: 1rem;
 	padding: 15px;
-	min-width: 320px;
+	width: 320px;
+	height: 575px;
 	background-color: white;
 }
 

@@ -160,7 +160,21 @@
 }
 
 @utility anim-trans-y {
-	animation: anim-translate-y 1s ease-in-out forwards var(--delay-translate, 0);
+	--y: 100px;
+	animation: anim-fade-in-y 1s ease-in-out forwards var(--delay-translate, 0);
+}
+
+@utility anim-trans-x {
+	--x: 100px;
+	animation: anim-fade-in-x 1s ease-in-out forwards var(--delay-translate, 0);
+}
+
+@utility animate-play {
+	animation-play-state: running;
+}
+
+@utility animate-pause {
+	animation-play-state: paused;
 }
 
 @utility anim-header {
@@ -203,6 +217,15 @@
 	}
 	to {
 		transform: translateY(0);
+	}
+}
+
+@keyframes anim-fade-in-x {
+	from {
+		transform: translateX(var(--x, 0));
+	}
+	to {
+		transform: translateX(0);
 	}
 }
 
@@ -440,8 +463,12 @@
 
 /* richtext */
 
+@utility header-w {
+	@apply w-[min(calc(100vw-2rem),58rem)];
+}
+
 @utility richtext {
-	@apply space-y-2 leading-relaxed;
+	@apply header-w mx-auto space-y-2 leading-relaxed;
 
 	& :is(h1, h2, h3, h4, h5, h6) strong {
 		@apply text-gradient;

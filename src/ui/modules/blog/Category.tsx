@@ -4,20 +4,25 @@ import { cn } from '@/lib/utils'
 
 export default function Category({
 	value,
+	colored,
 	label,
 	linked,
-	hash = true,
 }: {
 	value?: Sanity.BlogCategory
 	label?: string
-	hash?: boolean
+	colored?: string
 	linked?: boolean
 }) {
 	const props = {
+		style: {
+			background: colored,
+		},
 		className: cn(
 			'hover:*:underline',
-			hash && "before:text-current/50 before:content-['#']",
+			!colored && "before:text-current/50 before:content-['#']",
 			!linked && 'pointer-events-none',
+			colored &&
+				'rounded-[6.25rem] px-[2rem] py-2 font-cdis text[0.875rem] text-seashell font-bold uppercase',
 		),
 		children: <span>{label || value?.title}</span>,
 	}

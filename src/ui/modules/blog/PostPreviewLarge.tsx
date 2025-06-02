@@ -46,6 +46,7 @@ export default function PostPreviewLarge({ post }: { post: Sanity.BlogPost }) {
 					<Categories
 						className="flex flex-wrap gap-x-2"
 						categories={post.categories}
+						colored
 					/>
 				</div>
 

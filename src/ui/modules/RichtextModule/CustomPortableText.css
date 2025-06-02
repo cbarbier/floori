@@ -1,0 +1,29 @@
+#mask-rect2 {
+	animation: reveal 3s forwards ease 2s;
+}
+
+#mask-rect3 {
+	animation: reveal2 2s forwards ease 2s;
+}
+
+@keyframes reveal2 {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}
+
+#mask-rect {
+	animation: reveal 2s forwards ease 2s;
+}
+
+@keyframes reveal {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}

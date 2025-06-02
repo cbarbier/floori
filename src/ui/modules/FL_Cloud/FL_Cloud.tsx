@@ -20,8 +20,8 @@ export default function FL_Cloud({
 	Sanity.Module) {
 	console.log('phrases', phrases)
 	return (
-		<section className={cn('')} {...moduleProps(props)}>
-			<div className="section mx-auto flex w-fit flex-col">
+		<section className={cn('bg-creamy')} {...moduleProps(props)}>
+			<div className="section header-w mx-auto flex flex-col">
 				<div
 					className={cn('richtext m-automax-w-xl relative isolate text-center')}
 				>
@@ -40,7 +40,7 @@ export default function FL_Cloud({
 					className={cn('richtext m-automax-w-xl relative isolate text-center')}
 				>
 					<FadeInSection delay="4s">
-						<div className="font-cdis text-butterschotch mb-[2.875rem] max-w-screen overflow-x-hidden text-[1.5rem] sm:mb-[4.375rem]">
+						<div className="font-sora text-butterschotch mb-[2.875rem] max-w-screen overflow-x-hidden text-[1.5rem] sm:mb-[4.375rem]">
 							<CustomPortableText value={subtitle} />
 						</div>
 					</FadeInSection>

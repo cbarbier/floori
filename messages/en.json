@@ -1,5 +1,41 @@
 {
 	"Calendar": {
 		"title": "calendar"
+	},
+	"CalendarText": {
+		"cd1": "Global Team Weekly",
+		"cd2": "Product Team Kickoff",
+		"cd3": "Finance review",
+		"cd4": "Sophie 1st day : onboarding + Lunch Tech Team",
+		"cd5": "Design Review",
+		"cd6": "1:1 with J.F.",
+		"cd7": "Clients' reviews",
+		"cd8": "Demo KA",
+		"cd9": "Webinar: Figma",
+		"cd10": "Design System Kickoff",
+		"cd11": "Concept Design Review",
+		"cd12": "Design Team Weekly",
+		"cd13": "Call Investors",
+		"cd14": "Webinar : design & IA",
+		"cd15": "KickOff projet V2",
+		"cd16": "Process Onboarding Presentation",
+		"cd17": "MVP Priorisation Workshop",
+		"cd18": "Call Health Insurance",
+		"cd19": "Hiring projections 2026",
+		"cd20": "Remote Charter",
+		"cd21": "Design Review",
+		"cd22": "Management Committee",
+		"cd23": "ITW CSM",
+		"cd24": "Perf Review",
+		"cd25": "Lunch Marketing",
+		"cd26": "1:1 with Eva",
+		"cd27": "1:1 with Mat",
+		"cd28": "Weekly Sales Team",
+
+		"cmd1": "Thursday SEPT. 24th",
+		"cmd2": "Friday SEPT. 25th"
+	},
+	"Blog": {
+		"tableofcontent": "Table of content"
 	}
 }

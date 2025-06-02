@@ -104,7 +104,7 @@ export default function Cloud_v2({
 		// setCurrentIndex((prev) => Math.min(prev + 1, phrases.length - 1))
 	}
 	return (
-		<div className="mt-[3.4375rem] grid grid-cols-[40px_auto_40px] items-center gap-4 rounded-[1.5rem] bg-white p-3">
+		<div className="bg-seashell mt-[3.4375rem] grid grid-cols-[40px_auto_40px] items-center gap-4 rounded-[1.5rem] p-3">
 			<button
 				onClick={slideLeft}
 				className={cn(
@@ -135,7 +135,7 @@ export default function Cloud_v2({
 							key={'fl-cloud-phrase-' + i}
 							className={cn(
 								'phrase',
-								'font-cdis py-3 text-[1.125rem] text-black',
+								'font-sora py-3 text-[1.125rem] text-black',
 								'w-full flex-shrink-0 snap-center text-center',
 							)}
 						>

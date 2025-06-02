@@ -9,7 +9,7 @@ const config = require('./configCalendarDesktop.json')
 
 export default function CalendarDesktop() {
 	const t = useTranslations('CalendarText')
-	const { isInView, ref } = useInView(0.8)
+	const { isInView, ref } = useInView(1)
 
 	const buildTiles = useCallback(
 		(config: any, translate: any) => {
@@ -31,7 +31,7 @@ export default function CalendarDesktop() {
 						duration={t.duration}
 						breakword={t.breakword}
 						anim={t.anim}
-						isInView
+						isInView={isInView}
 					/>,
 				]
 			})
@@ -40,8 +40,8 @@ export default function CalendarDesktop() {
 		[isInView],
 	)
 	return (
-		<div ref={ref} className="wrapper mx-auto w-fit">
-			<div className="relative h-[543px] w-[861px]">
+		<div className="wrapper mx-auto w-fit">
+			<div ref={ref} className="relative h-[543px] w-[861px]">
 				<div className="absolute top-0 left-0 w-[861px]">
 					<img src="/svg/calendar_desktop.svg" />
 				</div>
