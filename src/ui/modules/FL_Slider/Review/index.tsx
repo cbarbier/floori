@@ -38,12 +38,23 @@ export default function Review({
 			>
 				{text}
 			</div>
-			<div className="sign font-bold">{sign}</div>
-			<Img
-				className="absolute bottom-2 left-6 aspect-square w-10 rounded-3xl"
-				image={image}
-				alt={'portrait'}
-			/>
+			<div
+				className={cn('grid', {
+					'grid-cols-[2.5rem_auto]': image,
+				})}
+			>
+				<Img
+					className={cn(
+						'aspect-square w-8 rounded-3xl transition-all duration-700',
+						{
+							'w-10': starred,
+						},
+					)}
+					image={image}
+					alt={'portrait'}
+				/>
+				<div className="sign font-bold">{sign}</div>
+			</div>
 		</div>
 	)
 }

@@ -66,7 +66,10 @@ export default function FL_Founder({
 					</svg>
 
 					<div className={cn('relative')}>
-						<CustomPortableText className="text-justify" value={bio} />
+						<CustomPortableText
+							className="font-inter text-justify"
+							value={bio}
+						/>
 					</div>
 				</div>
 			</div>

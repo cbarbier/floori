@@ -28,7 +28,7 @@ export default function FL_Cloud({
 						<CustomPortableText value={title} />
 					</div>
 					{text && (
-						<div className="mb-[1.25rem] sm:mb-[1.5rem]">
+						<div className="font-inter mb-[1.25rem] sm:mb-[1.5rem]">
 							<CustomPortableText value={text} />
 						</div>
 					)}

@@ -19,8 +19,6 @@ export default function Slides({
 }>) {
 	const fullSlidesList = [...slides, ...slides, ...slides, ...slides]
 
-	const { DebugPanel, x } = useDebugCounter({ x: 0 })
-
 	const isMobile = useIsMobile(900)
 	const sliderRef = useRef<HTMLDivElement | null>(null)
 	const sliderTrackRef = useRef<HTMLDivElement | null>(null)
@@ -90,10 +88,10 @@ export default function Slides({
 			setScreenWidth(window.innerWidth)
 		}
 
-		const slideWidth = slider.getBoundingClientRect().width
+		const sliderWidth = slider.getBoundingClientRect().width
 
-		if (slideWidth) {
-			sliderWidthRef.current = slideWidth
+		if (sliderWidth) {
+			sliderWidthRef.current = sliderWidth
 		}
 		const cards = Array.from(slider.querySelectorAll('.slide'))
 		const cardWidth = cards[0].getBoundingClientRect().width
@@ -163,8 +161,8 @@ export default function Slides({
 		setIsDragging(true)
 		setStartX(clientX)
 	}
-	const cardWidth = 398
-	const sliderWidth = sliderWidthRef.current ?? 1000
+	const cardWidth = cardWidthRef.current ?? 398
+	const sliderWidth = sliderRef.current?.getBoundingClientRect().width ?? 1000
 	const common = (sliderTrackRef: RefObject<HTMLDivElement | null>) => {
 		if (!sliderTrackRef || !sliderTrackRef.current) return
 
@@ -203,7 +201,7 @@ export default function Slides({
 	}
 
 	const translateX =
-		x + sliderWidth / 2 - 0.5 * cardWidth - currentIndex * cardWidth
+		sliderWidth / 2 - 0.5 * cardWidth - currentIndex * cardWidth
 	console.log('translate x', translateX)
 	console.log('cardWidth', cardWidth)
 	console.log('sliderWidth', sliderWidth)
@@ -213,7 +211,6 @@ export default function Slides({
 				'grid-cols-[2.5rem_auto_2.5rem] gap-4': !isMobile,
 			})}
 		>
-			<DebugPanel />
 			{!isMobile && (
 				<button
 					onClick={slideLeft}
@@ -245,7 +242,7 @@ export default function Slides({
 				ref={sliderRef}
 				onMouseDown={handleStart}
 				onTouchStart={handleStart}
-				className="relative overflow-x-hidden"
+				className="relative max-w-full overflow-x-hidden"
 			>
 				{/* Fade Left */}
 				{/* <div className="pointer-events-none absolute top-0 left-0 z-10 h-full w-16 bg-gradient-to-r from-white/80 to-transparent" /> */}
@@ -276,7 +273,7 @@ export default function Slides({
 						return (
 							<div
 								className={cn(
-									'slide flex h-[23.8125rem] min-w-[min(100%-1rem,24.875rem)] items-center justify-center',
+									'slide flex aspect-square w-[min(calc(100vw-1rem),24.875rem)] items-center justify-center',
 									{
 										'border-vistablue': currentIndex === i,
 									},
