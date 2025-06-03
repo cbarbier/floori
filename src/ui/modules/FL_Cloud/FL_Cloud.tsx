@@ -2,7 +2,6 @@ import moduleProps from '@/lib/moduleProps'
 import { cn } from '@/lib/utils'
 import CustomPortableText from '../RichtextModule/CustomPortableText'
 import CloudArrow from './CloudArrow'
-import Cloud_shape from './Cloud_shape'
 import Cloud_v2 from './Cloud_v2'
 import { FadeInSection } from '@/ui/animations/FadeInSection'
 

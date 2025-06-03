@@ -10,8 +10,7 @@ const DoubleFlower = ({ children }: PortableTextMarkComponentProps<any>) => {
 	const { isInView, ref } = useInView(1)
 
 	return (
-		<span ref={ref} className="relative inline-block">
-			{children}
+		<span ref={ref} className="relative inline-block max-sm:ml-6">
 			<div
 				style={
 					{
@@ -20,7 +19,7 @@ const DoubleFlower = ({ children }: PortableTextMarkComponentProps<any>) => {
 					} as React.CSSProperties
 				}
 				className={cn(
-					'flowers absolute -top-4 -left-12 flex h-[3.5rem] w-[2.8125rem] flex-col justify-between',
+					'flowers absolute -top-4 -left-12 flex h-[3.5rem] w-[2.8125rem] flex-col justify-between sm:-left-20',
 					css.fadeinsection,
 					isInView ? css.isvisible : null,
 				)}
@@ -54,6 +53,7 @@ const DoubleFlower = ({ children }: PortableTextMarkComponentProps<any>) => {
 					</svg>
 				</div>
 			</div>
+			{children}
 		</span>
 	)
 }

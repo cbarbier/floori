@@ -12,7 +12,7 @@ const Rays = ({
 	isInView?: boolean
 }) => {
 	return (
-		<span className="relative inline-block">
+		<span className="relative inline-block max-sm:mr-4">
 			{children}
 			<svg
 				width="35"
@@ -20,7 +20,7 @@ const Rays = ({
 				viewBox="0 0 35 39"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
-				className={cn('absolute top-[60%] left-[110%] sm:top-full')}
+				className={cn('absolute top-[40%] left-[105%] sm:top-[60%]')}
 			>
 				<mask id="draw-mask2">
 					<rect

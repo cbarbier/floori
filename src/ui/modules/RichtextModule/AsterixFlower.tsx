@@ -4,22 +4,24 @@ import { PortableTextMarkComponentProps } from 'next-sanity'
 import { useInView } from '@/lib/useInView'
 import { cn } from '@/lib/utils'
 import css from '@/ui/animations/FadeInSection/fadeinsection.module.css'
+import { useIsMobile } from '@/lib/useIsMobile'
 
 const AsterixFlower = ({ children }: PortableTextMarkComponentProps<any>) => {
+	const isMobile = useIsMobile()
 	const { isInView, ref } = useInView(1)
 
 	return (
-		<span ref={ref} className="relative inline-block">
+		<span ref={ref} className="relative inline-block max-sm:mr-4">
 			{children}
 			<svg
-				width="50"
-				height="47"
+				width={isMobile ? 32 : 50}
+				height={isMobile ? 30 : 47}
 				viewBox="0 0 50 47"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
 				style={
 					{
-						'--x': '100px',
+						'--x': '32px',
 						'--y': '0px',
 					} as React.CSSProperties
 				}

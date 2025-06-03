@@ -1,6 +1,7 @@
 import { defineField, defineType } from 'sanity'
 import { TfiLayoutCtaCenter } from 'react-icons/tfi'
 import { VscMegaphone } from 'react-icons/vsc'
+import richtextBuilder from '../fragments/richtext'
 
 export default defineType({
 	name: 'fl_definition',
@@ -19,6 +20,7 @@ export default defineType({
 			name: 'definition',
 			type: 'string',
 		}),
+		richtextBuilder('title', 'content'),
 		defineField({
 			name: 'text',
 			type: 'text',

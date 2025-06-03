@@ -5,16 +5,16 @@ type CounterValues = Record<string, number>
 export function useDebugCounter<T extends CounterValues>(initialCounters: T) {
 	const [counters, setCounters] = useState<T>(initialCounters)
 
-	const increment = (key: keyof T) =>
+	const increment = (key: keyof T, step = 1) =>
 		setCounters((prev) => ({
 			...prev,
-			[key]: prev[key] + 1,
+			[key]: prev[key] + step,
 		}))
 
-	const decrement = (key: keyof T) =>
+	const decrement = (key: keyof T, step = 1) =>
 		setCounters((prev) => ({
 			...prev,
-			[key]: prev[key] - 1,
+			[key]: prev[key] - step,
 		}))
 
 	const DebugPanel: React.FC = () => (
@@ -30,13 +30,25 @@ export function useDebugCounter<T extends CounterValues>(initialCounters: T) {
 							onClick={() => increment(key as keyof T)}
 							className="rounded bg-green-700 px-2 py-1 text-xs hover:bg-green-600"
 						>
-							+ inc
+							+1
+						</button>
+						<button
+							onClick={() => increment(key as keyof T, 10)}
+							className="rounded bg-green-700 px-2 py-1 text-xs hover:bg-green-600"
+						>
+							+10
+						</button>
+						<button
+							onClick={() => decrement(key as keyof T, 10)}
+							className="rounded bg-red-700 px-2 py-1 text-xs hover:bg-red-600"
+						>
+							-10
 						</button>
 						<button
 							onClick={() => decrement(key as keyof T)}
 							className="rounded bg-red-700 px-2 py-1 text-xs hover:bg-red-600"
 						>
-							- dec
+							-1
 						</button>
 					</div>
 				</div>

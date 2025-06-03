@@ -8,6 +8,7 @@ import AsterixFlower from './AsterixFlower'
 import { useInView } from '@/lib/useInView'
 import Rays from './Rays'
 import DoubleFlower from './DoubleFlower'
+import DefUnderline from './DefUnderline'
 
 export default function CustomPortableText({
 	value,
@@ -40,6 +41,7 @@ export default function CustomPortableText({
 						doubleflower: DoubleFlower,
 						asterixflower: AsterixFlower,
 						herounderline: HeroUnderline,
+						defunderline: DefUnderline,
 						cardunderline: ({ children, ...props }) => (
 							<CardUnderline {...props} isInView={isInView}>
 								{children}
@@ -49,7 +51,7 @@ export default function CustomPortableText({
 					},
 					list: {
 						bullet: ({ children }) => (
-							<ul className="list-disc pl-6">{children}</ul>
+							<ul className="list-disc pl-[13px]">{children}</ul>
 						),
 						number: ({ children }) => (
 							<ol className="list-decimal pl-6">{children}</ol>

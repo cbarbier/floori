@@ -5,8 +5,6 @@ import CTAList from '@/ui/CTAList'
 import { cn } from '@/lib/utils'
 import Calendar from '../../Calendar'
 import CustomPortableText from '../RichtextModule/CustomPortableText'
-import { useEffect, useRef, useState } from 'react'
-import { useInView } from '@/lib/useInView'
 
 export default function FL_Hero({
 	title,
@@ -21,18 +19,15 @@ export default function FL_Hero({
 	calendar: boolean
 }> &
 	Sanity.Module) {
-	const { ref, isInView } = useInView()
-
 	return (
 		<section
-			ref={ref}
 			className={cn(
 				'pt-[9.25rem] pb-[3.875rem] sm:pt-[10.1875rem] sm:pb-[4.125rem]',
 			)}
 			{...moduleProps(props)}
 		>
-			<div className="section flex w-fit flex-col text-balance">
-				<div className={cn('richtext relative isolate text-center')}>
+			<div className="section richtext flex w-fit flex-col text-balance">
+				<div className={cn('relative text-center')}>
 					<div id="herotitle" className="mx-auto mb-[3rem]">
 						<CustomPortableText value={title} />
 					</div>

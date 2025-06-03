@@ -42,6 +42,11 @@ export default (name: string, group: string) =>
 							icon: FaUnderline,
 						},
 						{
+							title: 'def underline',
+							value: 'defunderline',
+							icon: FaUnderline,
+						},
+						{
 							title: 'rays down right',
 							value: 'rays',
 							icon: FaXRay,

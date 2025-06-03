@@ -17,16 +17,11 @@ export default async function Footer() {
 			className="bg-vistablue text-seashell sm-px-8 px-4"
 			role="contentinfo"
 		>
-			<div className="section flex flex-wrap items-center justify-start gap-x-12 gap-y-8 py-2 max-sm:flex-col sm:h-[5.5rem]">
-				<div className="flex flex-col gap-3 sm:mr-auto">
+			<div className="section flex flex-wrap items-center justify-start gap-y-8 py-2 sm:h-[5.5rem] sm:gap-x-12">
+				<div className="flex flex-col gap-3 max-sm:w-full max-sm:self-start sm:mr-auto">
 					<Link className="h3 md:h2 max-w-max" href="/">
 						{logoImage ? (
-							// <Img
-							// 	className="max-h-[1.5em] w-auto"
-							// 	image={logoImage}
-							// 	alt={logo?.name || title}
-							// />
-							<div className="aspect-[621/348] max-h-[1.5em] w-auto">
+							<div className="aspect-[621/348] max-h-[1.5em]">
 								<FooterLogo />
 							</div>
 						) : (
@@ -39,13 +34,11 @@ export default async function Footer() {
 							<PortableText value={blurb} />
 						</div>
 					)}
-
-					{/* <LanguageSwitcher className="mt-4 max-w-max" /> */}
 				</div>
 
 				{email && (
 					<ClickToCopy
-						className="group relative self-center"
+						className="group relative max-sm:mr-6 max-sm:ml-auto max-sm:w-fit sm:self-center"
 						childrenWhenCopied={<VscCheck size={32} />}
 						childrenWhenHover={<VscCopy size={32} />}
 						value={email}
@@ -53,7 +46,7 @@ export default async function Footer() {
 						<VscMail size={32} className="" />
 					</ClickToCopy>
 				)}
-				<Social className="" />
+				<Social className="max-sm:mr-auto max-sm:w-fit" />
 				<Navigation />
 			</div>
 

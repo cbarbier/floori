@@ -5,10 +5,8 @@ import CTAList from '@/ui/CTAList'
 import { cn } from '@/lib/utils'
 import CustomPortableText from '../RichtextModule/CustomPortableText'
 import css from './FL_Cards.module.css'
-import { useEffect, useState } from 'react'
 import { useIsMobile } from '@/lib/useIsMobile'
 import './cards.css'
-import { FadeInSection } from '@/ui/animations/FadeInSection'
 import { useInView } from '@/lib/useInView'
 
 export default function FL_Cards({
@@ -29,7 +27,7 @@ export default function FL_Cards({
 
 	return (
 		<section className={cn('cardsection')} {...moduleProps(props)}>
-			<div className="section mx-auto flex w-fit flex-col text-balance">
+			<div className="section mx-auto flex w-fit flex-col">
 				<div className={cn('richtext isolate text-center')}>
 					<div id="cardtitle" className="relative mb-[1.25rem] sm:mb-[1.5rem]">
 						<CustomPortableText value={title} />
@@ -43,13 +41,11 @@ export default function FL_Cards({
 				</div>
 				<div className="cards mx-auto mb-[2.375rem] flex w-fit flex-wrap justify-center gap-[1.25rem] sm:mb-[3.6875rem] sm:gap-[1.375rem]">
 					{cards?.map((c, i) => {
-						// <Card key={'fl-card-' + i} data={c} />
 						const cardClass =
 							'font-cdis px-8 text-[1.375rem] font-semibold sm:text-[1.75rem]'
 						return (
 							<div key={'fl-card-' + i}>
-								<div className="perspective group aspect-square w-[min(calc(100vw-2rem),21.9375rem)] text-center sm:w-[25rem]">
-									{/* The inner card flips when the parent group is hovered */}
+								<div className="perspective group aspect-[0.75] w-[min(calc(100vw-2rem),21.9375rem)] text-center sm:aspect-square sm:w-[25rem]">
 									<div
 										ref={i === 0 ? refFirstCard : null}
 										className={cn(
@@ -62,14 +58,17 @@ export default function FL_Cards({
 											<div className={cn(cardClass)}>{c.front}</div>
 										</div>
 										<div
-											className="absolute flex h-full w-full rotate-y-180 transform flex-col items-center justify-center rounded-[2.5rem] border border-[#D1BCB2] p-6 text-white backface-hidden"
+											className="gapp-8 absolute flex h-full w-full rotate-y-180 transform flex-col items-center justify-start rounded-[2.5rem] border border-[#D1BCB2] p-6 text-white backface-hidden"
 											style={{
 												backgroundColor: c.color.hex,
 											}}
 										>
 											<div className={cn(cardClass)}>{c.front}</div>
 											<CustomPortableText
-												className={cn(css.back, 'font-inter')}
+												className={cn(
+													css.back,
+													'font-inter text-[1rem] sm:text-[0.92rem]',
+												)}
 												value={c.back}
 											/>
 										</div>

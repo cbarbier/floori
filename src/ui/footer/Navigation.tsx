@@ -6,11 +6,11 @@ export default async function Menu() {
 	const { footerMenu } = await getSite()
 
 	return (
-		<nav className="flex flex-wrap items-start gap-x-12 gap-y-6 max-sm:flex-col">
+		<nav className="flex flex-wrap items-start gap-x-12 gap-y-6 max-sm:w-full max-sm:flex-col max-sm:self-end">
 			{footerMenu?.items?.map((item, key) => {
 				switch (item._type) {
 					case 'link':
-						return <CTA className="link" link={item} key={key} />
+						return <CTA className="link max-sm:ml-auto" link={item} key={key} />
 
 					case 'link.list':
 						return (

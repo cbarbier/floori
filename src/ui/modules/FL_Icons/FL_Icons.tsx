@@ -18,7 +18,7 @@ export default function FL_Icons({
 	return (
 		<section className={cn('bg-creamy')} {...moduleProps(props)}>
 			<div className="section mx-auto flex w-fit flex-col">
-				<div className="cards mx-auto flex w-fit flex-wrap justify-center gap-[1.25rem] sm:gap-[1.375]">
+				<div className="cards mx-auto flex w-fit flex-wrap justify-center gap-[3.5rem] sm:gap-[1.375]">
 					{icons?.map((icon, i) => {
 						// <Card key={'fl-card-' + i} data={c} />
 						const cardClass =
@@ -30,7 +30,7 @@ export default function FL_Icons({
 										<Img
 											height={80}
 											image={icon.image}
-											className="ease-[cubic-bezier(0.34, 1.56, 0.64, 1)] transition-transform duration-500 group-hover:-translate-y-5 group-hover:scale-105"
+											className="ease-[cubic-bezier(0.34, 1.56, 0.64, 1)] transition-transform duration-500 group-hover:-translate-y-5 group-hover:scale-105 focus:scale-100"
 										/>
 										<CustomPortableText
 											value={icon.text}

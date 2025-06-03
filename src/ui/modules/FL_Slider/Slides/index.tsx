@@ -5,6 +5,7 @@ import Skill from '../Skill'
 import Review from '../Review'
 import { RefObject, useEffect, useRef, useState } from 'react'
 import { cn } from '@/lib/utils'
+import { useDebugCounter } from '@/lib/useDebugCounter'
 
 const DISPATCH_MAP = {
 	skill: Skill,
@@ -17,6 +18,8 @@ export default function Slides({
 	slides: Sanity.Slide[]
 }>) {
 	const fullSlidesList = [...slides, ...slides, ...slides, ...slides]
+
+	const { DebugPanel, x } = useDebugCounter({ x: 0 })
 
 	const isMobile = useIsMobile(900)
 	const sliderRef = useRef<HTMLDivElement | null>(null)
@@ -98,6 +101,12 @@ export default function Slides({
 		if (cardWidth) {
 			cardWidthRef.current = cardWidth
 		}
+		console.log(
+			'card width',
+			cardWidthRef.current,
+			'slider width',
+			sliderWidthRef.current,
+		)
 
 		setTransition(true)
 		window.addEventListener('resize', handleResize)
@@ -154,7 +163,7 @@ export default function Slides({
 		setIsDragging(true)
 		setStartX(clientX)
 	}
-	const cardWidth = cardWidthRef.current ?? 398
+	const cardWidth = 398
 	const sliderWidth = sliderWidthRef.current ?? 1000
 	const common = (sliderTrackRef: RefObject<HTMLDivElement | null>) => {
 		if (!sliderTrackRef || !sliderTrackRef.current) return
@@ -193,12 +202,18 @@ export default function Slides({
 		setCurrentIndex((prev) => Math.min(prev + 1, fullSlidesList.length - 1))
 	}
 
+	const translateX =
+		x + sliderWidth / 2 - 0.5 * cardWidth - currentIndex * cardWidth
+	console.log('translate x', translateX)
+	console.log('cardWidth', cardWidth)
+	console.log('sliderWidth', sliderWidth)
 	return (
 		<div
-			className={cn('grid', {
-				'grid-cols-[2.5rem_auto_2.5rem]': !isMobile,
+			className={cn('relative grid', {
+				'grid-cols-[2.5rem_auto_2.5rem] gap-4': !isMobile,
 			})}
 		>
+			<DebugPanel />
 			{!isMobile && (
 				<button
 					onClick={slideLeft}
@@ -245,7 +260,8 @@ export default function Slides({
 					})}
 					style={
 						{
-							transform: `translateX(${sliderWidth / 2 - 0.5 * cardWidth - currentIndex * cardWidth}px)`,
+							transform: `translateX(${translateX}px)`,
+							// transform: `translateX(${x}px)`,
 						} as React.CSSProperties
 					}
 				>
@@ -258,15 +274,21 @@ export default function Slides({
 						if (!Component) return null
 
 						return (
-							<Component
-								{...slide}
+							<div
+								className={cn(
+									'slide flex h-[23.8125rem] min-w-[min(100%-1rem,24.875rem)] items-center justify-center',
+									{
+										'border-vistablue': currentIndex === i,
+									},
+								)}
 								key={`slide-${slide._key}-${i}`}
-								starred
-								className={cn('slide snap-center', {
-									// 'border-vistablue': currentIndex === i,
-									'scale-90': !isMobile && currentIndex !== i,
-								})}
-							/>
+							>
+								<Component
+									{...slide}
+									starred={currentIndex === i}
+									transition={transition}
+								/>
+							</div>
 						)
 					})}
 				</div>
@@ -278,7 +300,7 @@ export default function Slides({
 						{
 							// 'cursor-not-allowed': currentIndex == phrases.length - 1,
 						},
-						'aspect-square w-[2.5rem] rotate-180 self-center rounded-full text-white disabled:bg-[#cedced]',
+						'aspect-[0.9] w-[2.5rem] rotate-180 self-center rounded-full text-white disabled:bg-[#cedced]',
 					)}
 					// disabled={currentIndex == phrases.length - 1}
 				>
