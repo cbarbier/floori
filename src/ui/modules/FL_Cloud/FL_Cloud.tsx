@@ -22,7 +22,7 @@ export default function FL_Cloud({
 	console.log('phrases', phrases)
 	return (
 		<section className={cn('bg-creamy')} {...moduleProps(props)}>
-			<div className="section header-w mx-auto flex flex-col">
+			<div className="section mx-auto flex w-fit flex-col">
 				<div className={cn('richtext relative isolate text-center')}>
 					<div className="mb-[1.25rem] sm:mb-[1.5rem]">
 						<CustomPortableText value={title} />
@@ -43,7 +43,7 @@ export default function FL_Cloud({
 				<div
 					className={cn('richtext m-automax-w-xl relative isolate text-center')}
 				>
-					<FadeInSection delay="4s">
+					<FadeInSection delay="2.5s">
 						<div className="font-cdis text-butterschotch mb-[2.875rem] max-w-screen overflow-x-hidden text-[1.5rem] sm:mb-[4.375rem]">
 							<CustomPortableText value={subtitle} />
 						</div>

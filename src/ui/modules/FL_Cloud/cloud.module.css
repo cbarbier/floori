@@ -1,5 +1,5 @@
 .maskrect {
-	animation: revealcloud 3s forwards ease 2s;
+	animation: revealcloud 2.5s forwards ease 1s;
 }
 
 @keyframes revealcloud {

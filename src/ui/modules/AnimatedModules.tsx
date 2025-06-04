@@ -102,7 +102,7 @@ export default function Modules({
 				if (!Component) return null
 
 				return (
-					<FadeInSection y="400px" key={'animated-' + module._key}>
+					<FadeInSection y="400px" ym="200px" key={'animated-' + module._key}>
 						<Component
 							{...module}
 							{...getAdditionalProps(module)}

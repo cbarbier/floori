@@ -10,11 +10,9 @@ const HeroUnderline = ({ children }: PortableTextMarkComponentProps<any>) => {
 		<span ref={ref} className="relative inline-block">
 			{children}
 			<svg
-				width={272}
-				height={16}
 				fill="none"
 				viewBox={`0 0 272 16`}
-				className="absolute top-full left-0 h-[16px] w-full"
+				className="absolute top-full left-0 block w-full"
 			>
 				<mask id="draw-mask">
 					<rect x="0" y="0" width="0" height="16" fill="white" id="mask-rect" />

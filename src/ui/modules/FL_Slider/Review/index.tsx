@@ -44,12 +44,10 @@ export default function Review({
 				})}
 			>
 				<Img
-					className={cn(
-						'aspect-square w-8 rounded-3xl transition-all duration-700',
-						{
-							'w-10': starred,
-						},
-					)}
+					className={cn('aspect-square w-8 rounded-3xl', {
+						'transition-all duration-700': transition,
+						'w-10': starred,
+					})}
 					image={image}
 					alt={'portrait'}
 				/>

@@ -1,15 +1,5 @@
 .flipcard {
-	transition: transform 1.1s;
-	transform-style: preserve-3d;
-}
-
-.group:hover .flipcard {
-	transform: rotateY(180deg);
-	transition-delay: 0s; /* no delay on hover in */
-}
-
-.flipcard {
-	transition-delay: 0.4s; /* delay on hover out */
+	transition: transform 0.8s;
 }
 
 .back {

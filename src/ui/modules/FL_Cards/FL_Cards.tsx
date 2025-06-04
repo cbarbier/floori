@@ -49,7 +49,7 @@ export default function FL_Cards({
 									<div
 										ref={i === 0 ? refFirstCard : null}
 										className={cn(
-											'transform-style preserve-3d relative h-full w-full delay-0 group-hover:rotate-y-180',
+											'transform-style preserve-3d flipcard relative h-full w-full delay-0 group-hover:rotate-y-180',
 											{ 'rotate-y-180': i === 0 && !isInView },
 											css.flipcard,
 										)}
@@ -58,7 +58,7 @@ export default function FL_Cards({
 											<div className={cn(cardClass)}>{c.front}</div>
 										</div>
 										<div
-											className="gapp-8 absolute flex h-full w-full rotate-y-180 transform flex-col items-center justify-start rounded-[2.5rem] border border-[#D1BCB2] p-6 text-white backface-hidden"
+											className="absolute flex h-full w-full rotate-y-180 transform flex-col items-center justify-start rounded-[2.5rem] border border-[#D1BCB2] p-6 text-white backface-hidden"
 											style={{
 												backgroundColor: c.color.hex,
 											}}

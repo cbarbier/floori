@@ -82,7 +82,7 @@ export default function TileMobile({
 				</div>
 				<div className="title font-inter w-[1.625rem] text-[0.59375rem] font-[500]">
 					<div className="hour text-[#230903]">{hour}</div>
-					<div className="end text-[#71717A]">{hour}</div>
+					<div className="end text-[#71717A]">{end}</div>
 				</div>
 			</div>
 		</div>

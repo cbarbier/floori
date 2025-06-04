@@ -4,6 +4,7 @@ import { PortableTextMarkComponentProps } from 'next-sanity'
 
 import './CustomPortableText.css'
 import { cn } from '@/lib/utils'
+import { useIsMobile } from '@/lib/useIsMobile'
 
 const Rays = ({
 	children,
@@ -11,12 +12,13 @@ const Rays = ({
 }: PortableTextMarkComponentProps<any> & {
 	isInView?: boolean
 }) => {
+	const isMobile = useIsMobile()
 	return (
 		<span className="relative inline-block max-sm:mr-4">
 			{children}
 			<svg
-				width="35"
-				height="39"
+				width={isMobile ? '25' : '35'}
+				height={isMobile ? '28' : '39'}
 				viewBox="0 0 35 39"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"

@@ -50,8 +50,10 @@ export default function Slides({
 				currentIndex === startIndex - slides.length ||
 				currentIndex === startIndex + slides.length
 			) {
-				setTransition(false)
-				setCurrentIndex(startIndex)
+				setTimeout(() => {
+					setTransition(false)
+					setCurrentIndex(startIndex)
+				}, 300)
 			}
 			console.log('transition end')
 			setDisableButton(false)
@@ -273,7 +275,7 @@ export default function Slides({
 						return (
 							<div
 								className={cn(
-									'slide flex aspect-square w-[min(calc(100vw-1rem),24.875rem)] items-center justify-center',
+									'slide flex aspect-[0.95] w-[min(calc(100vw-1rem),24.875rem)] items-center justify-center',
 									{
 										'border-vistablue': currentIndex === i,
 									},

@@ -2,6 +2,15 @@
 	animation: reveal 3s forwards ease 2s;
 }
 
+.group:hover .flipcard {
+	transform: rotateY(180deg);
+	transition-delay: 0s; /* no delay on hover in */
+}
+
+.flipcard {
+	transition-delay: 0.5s; /* delay on hover out */
+}
+
 #cardtitle span:first-of-type {
 	/* background-color: blue; */
 }

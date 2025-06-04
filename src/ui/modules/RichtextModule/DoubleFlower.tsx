@@ -1,33 +1,33 @@
 'use client'
 
 import { useInView } from '@/lib/useInView'
+import { useIsMobile } from '@/lib/useIsMobile'
 import { cn } from '@/lib/utils'
 import css from '@/ui/animations/FadeInSection/fadeinsection.module.css'
 
 import { PortableTextMarkComponentProps } from 'next-sanity'
 
 const DoubleFlower = ({ children }: PortableTextMarkComponentProps<any>) => {
+	const isMobile = useIsMobile()
 	const { isInView, ref } = useInView(1)
 
 	return (
-		<span ref={ref} className="relative inline-block max-sm:ml-6">
+		<span ref={ref} className="relative inline-block max-sm:ml-7">
 			<div
 				style={
 					{
-						'--x': '-200px',
+						'--x': isMobile ? '-100PX' : '-200px',
 						'--y': '0px',
 					} as React.CSSProperties
 				}
 				className={cn(
-					'flowers absolute -top-4 -left-12 flex h-[3.5rem] w-[2.8125rem] flex-col justify-between sm:-left-20',
+					'flowers absolute -top-4 -left-12 flex h-[2.5rem] w-[1.8125rem] flex-col justify-between sm:-left-20 sm:h-[3.5rem] sm:w-[2.8125rem]',
 					css.fadeinsection,
 					isInView ? css.isvisible : null,
 				)}
 			>
-				<div className="bigflo self-start">
+				<div className="bigflo h-[14px] w-[14px] self-start sm:h-[20px] sm:w-[20px]">
 					<svg
-						width="20"
-						height="20"
 						viewBox="0 0 20 20"
 						fill="none"
 						xmlns="http://www.w3.org/2000/svg"
@@ -38,10 +38,8 @@ const DoubleFlower = ({ children }: PortableTextMarkComponentProps<any>) => {
 						/>
 					</svg>
 				</div>
-				<div className="littleflo self-end">
+				<div className="littleflo h-[12px] w-[11px] self-end sm:h-[18px] sm:w-[17px]">
 					<svg
-						width="17"
-						height="18"
 						viewBox="0 0 17 18"
 						fill="none"
 						xmlns="http://www.w3.org/2000/svg"

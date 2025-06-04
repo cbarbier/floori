@@ -17,8 +17,8 @@ export default async function Footer() {
 			className="bg-vistablue text-seashell sm-px-8 px-4"
 			role="contentinfo"
 		>
-			<div className="section flex flex-wrap items-center justify-start gap-y-8 py-2 sm:h-[5.5rem] sm:gap-x-12">
-				<div className="flex flex-col gap-3 max-sm:w-full max-sm:self-start sm:mr-auto">
+			<div className="section flex flex-wrap items-center justify-start gap-y-4 py-2 sm:h-[5.5rem] sm:gap-x-12 sm:gap-y-8">
+				<div className="flex flex-col gap-3 max-sm:w-fit sm:mr-auto">
 					<Link className="h3 md:h2 max-w-max" href="/">
 						{logoImage ? (
 							<div className="aspect-[621/348] max-h-[1.5em]">

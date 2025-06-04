@@ -11,9 +11,22 @@ export default function Cloud_v2({
 }>) {
 	const sliderRef = useRef<HTMLDivElement>(null)
 	const [currentIndex, setCurrentIndex] = useState<number>(0)
+	const autoScrollRef = useRef<NodeJS.Timeout | null>(null)
+	const userInterrupted = useRef(false)
 
 	const cardWidthRef = useRef(0)
 	const isJumpingRef = useRef(false)
+
+	useEffect(() => {
+		autoScrollRef.current = setInterval(() => {
+			console.log('interval slide right')
+			scrollByCard(cardWidthRef.current)
+		}, 3000)
+
+		return () => {
+			if (autoScrollRef.current) clearInterval(autoScrollRef.current)
+		}
+	}, [])
 
 	useEffect(() => {
 		if (!sliderRef.current) return
@@ -94,17 +107,21 @@ export default function Cloud_v2({
 	}
 
 	const slideLeft = () => {
+		if (!userInterrupted.current) {
+			userInterrupted.current = true
+			if (autoScrollRef.current) clearInterval(autoScrollRef.current)
+		}
 		scrollByCard(-cardWidthRef.current)
-		// if (!sliderRef || !sliderRef.current) return
-		// setCurrentIndex((prev) => Math.max(prev - 1, 0))
 	}
 	const slideRight = () => {
+		if (!userInterrupted.current) {
+			userInterrupted.current = true
+			if (autoScrollRef.current) clearInterval(autoScrollRef.current)
+		}
 		scrollByCard(cardWidthRef.current)
-		// if (!sliderRef || !sliderRef.current) return
-		// setCurrentIndex((prev) => Math.min(prev + 1, phrases.length - 1))
 	}
 	return (
-		<div className="bg-seashell mt-[3.4375rem] grid grid-cols-[40px_auto_40px] items-center gap-4 rounded-[1.5rem] p-3">
+		<div className="bg-seashell header-w mt-[3.4375rem] grid grid-cols-[40px_auto_40px] items-center gap-4 rounded-[1.5rem] p-3">
 			<button
 				onClick={slideLeft}
 				className={cn(
@@ -148,7 +165,7 @@ export default function Cloud_v2({
 							key={'fl-cloud-phrase-' + i}
 							className={cn(
 								'phrase',
-								'font-inter py-3 text-[1.125rem] text-black',
+								'font-inter py-3 text-[1.0625rem] text-black',
 								'w-full flex-shrink-0 snap-center text-center',
 							)}
 						>
