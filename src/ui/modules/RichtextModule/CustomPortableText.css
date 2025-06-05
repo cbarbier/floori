@@ -1,14 +1,14 @@
 #mask-rect2 {
-	animation: reveal 0.3s forwards ease;
+	animation: reveal2 0.2s linear;
 }
 
 #mask-rect3 {
-	animation: reveal2 2s forwards ease 2s;
+	animation: reveal 2s forwards ease 2s;
 }
 
 @keyframes reveal2 {
 	from {
-		width: 0;
+		width: 50%;
 	}
 	to {
 		width: 100%;

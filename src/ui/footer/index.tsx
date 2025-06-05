@@ -17,7 +17,7 @@ export default async function Footer() {
 			className="bg-vistablue text-seashell sm-px-8 px-4"
 			role="contentinfo"
 		>
-			<div className="section flex flex-wrap items-center justify-start gap-y-4 py-2 sm:h-[5.5rem] sm:gap-x-12 sm:gap-y-8">
+			<div className="section flex flex-wrap items-center justify-start gap-y-4 py-2 max-sm:justify-between sm:h-[5.5rem] sm:gap-x-12 sm:gap-y-8">
 				<div className="flex flex-col gap-3 max-sm:w-fit sm:mr-auto">
 					<Link className="h3 md:h2 max-w-max" href="/">
 						{logoImage ? (
@@ -38,7 +38,7 @@ export default async function Footer() {
 
 				{email && (
 					<ClickToCopy
-						className="group relative max-sm:mr-6 max-sm:ml-auto max-sm:w-fit sm:self-center"
+						className="group relative max-sm:mr-6 max-sm:w-fit sm:self-center"
 						childrenWhenCopied={<VscCheck size={32} />}
 						childrenWhenHover={<VscCopy size={32} />}
 						value={email}
@@ -46,7 +46,7 @@ export default async function Footer() {
 						<VscMail size={32} className="" />
 					</ClickToCopy>
 				)}
-				<Social className="max-sm:mr-auto max-sm:w-fit" />
+				<Social className="max-sm:w-fit" />
 				<Navigation />
 			</div>
 
