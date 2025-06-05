@@ -13,6 +13,7 @@ export default function TileDesktop({
 	breakword = false,
 	anim,
 	isInView,
+	offset = 0,
 }: Partial<{
 	hour: string
 	text: string
@@ -25,6 +26,7 @@ export default function TileDesktop({
 	breakword: boolean
 	anim?: string
 	isInView: boolean
+	offset: number
 }>) {
 	const colorMap: Record<string, any> = {
 		blue: {
@@ -63,14 +65,20 @@ export default function TileDesktop({
 			y: '0',
 		},
 		left: {
-			x: '-15rem',
-			y: '-15rem',
+			x: `-${offset}px`,
+			y: `-${offset}px`,
 		},
 		right: {
-			x: '15rem',
-			y: '-15rem',
+			x: `${offset}px`,
+			y: `-${offset}px`,
 		},
 	}
+
+	const fadeStart = 200
+	const fadeEnd = 700
+
+	const opacity =
+		1 - Math.min(Math.max((offset - fadeStart) / (fadeEnd - fadeStart), 0), 1)
 
 	const animConf = anim ? animMap[anim] : null
 
@@ -86,8 +94,8 @@ export default function TileDesktop({
 	return (
 		<div
 			className={cn('absolute z-10 rounded-[3.14px] p-[0.296875rem]', {
-				'anim-trans': isInView && (anim === 'left' || anim === 'right'),
-				'anim-fade-out': isInView && anim,
+				// 'anim-trans': isInView && (anim === 'left' || anim === 'right'),
+				// 'anim-fade-out': isInView && anim,
 			})}
 			style={
 				{
@@ -95,9 +103,11 @@ export default function TileDesktop({
 					top: `${top}px`,
 					left: `${left}px`,
 					backgroundColor: c.bg,
+					translate: `${animConf?.x} ${animConf?.y}`,
 					color: c.color,
 					width: `${width}px`,
 					height: `${height}px`,
+					...(anim ? { opacity } : {}),
 					'--x': animConf?.x ?? '0',
 					'--y': animConf?.y ?? '0',
 					'--delay-fadeout': '500ms',

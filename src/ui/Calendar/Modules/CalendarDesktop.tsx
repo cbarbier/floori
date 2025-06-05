@@ -3,13 +3,28 @@
 import { useTranslations } from 'next-intl'
 import TileDesktop from './TileDesktop'
 import { useInView } from '@/lib/useInView'
-import { RefObject, useCallback } from 'react'
+import { RefObject, useCallback, useEffect } from 'react'
+import { useCenteredInView } from '@/lib/useCenteredInView'
+import { useScrollOffset } from '@/lib/useScrolloffset'
 
 const config = require('./configCalendarDesktop.json')
 
 export default function CalendarDesktop() {
 	const t = useTranslations('CalendarText')
-	const { isInView, ref } = useInView(1)
+	const { isCentered, ref } = useCenteredInView<HTMLDivElement>()
+
+	const { offset, lockScroll } = useScrollOffset({
+		onMaxReached: () => {
+			console.log('end of scroll animation')
+		},
+		max: 700,
+	})
+
+	useEffect(() => {
+		if (isCentered) {
+			lockScroll()
+		}
+	}, [isCentered])
 
 	const buildTiles = useCallback(
 		(config: any, translate: any) => {
@@ -31,13 +46,14 @@ export default function CalendarDesktop() {
 						duration={t.duration}
 						breakword={t.breakword}
 						anim={t.anim}
-						isInView={isInView}
+						isInView={isCentered}
+						offset={offset}
 					/>,
 				]
 			})
 			return tiles
 		},
-		[isInView],
+		[isCentered, offset],
 	)
 	return (
 		<div className="wrapper mx-auto w-fit">

@@ -1,11 +1,12 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { useInView } from '@/lib/useInView'
-import { RefObject, useCallback } from 'react'
+import { useCallback, useEffect } from 'react'
 import TileLarge from './TileLarge'
-import { useDebugCounter } from '@/lib/useDebugCounter'
 import { cn } from '@/lib/utils'
+import { useScrollOffset } from '@/lib/useScrolloffset'
+
+import { useCenteredInView } from '@/lib/useCenteredInView'
 
 const config = require('./configCalendarDesktop.json')
 
@@ -17,7 +18,21 @@ export type DebugCounter = {
 
 export default function CalendarLarge() {
 	const t = useTranslations('CalendarText')
-	const { isInView, ref } = useInView(1)
+
+	const { isCentered, ref } = useCenteredInView<HTMLDivElement>()
+
+	const { offset, lockScroll } = useScrollOffset({
+		onMaxReached: () => {
+			console.log('end of scroll animation')
+		},
+		max: 700,
+	})
+
+	useEffect(() => {
+		if (isCentered) {
+			lockScroll()
+		}
+	}, [isCentered])
 
 	const buildTiles = useCallback(
 		(config: any, translate: any) => {
@@ -39,13 +54,14 @@ export default function CalendarLarge() {
 						duration={t.duration}
 						breakword={t.breakword}
 						anim={t.anim}
-						isInView={isInView}
+						offset={offset}
+						isInView={isCentered}
 					/>,
 				]
 			})
 			return tiles
 		},
-		[isInView],
+		[isCentered, offset],
 	)
 	return (
 		<div className="wrapper mx-auto w-fit">

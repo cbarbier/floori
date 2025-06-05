@@ -83,7 +83,7 @@ export default function Slides({
 	useEffect(() => {
 		const slider = sliderRef.current
 
-		if (!slider) return
+		if (!slider || typeof window === 'undefined') return
 
 		const handleResize = () => {
 			console.log('resizing')
@@ -114,6 +114,8 @@ export default function Slides({
 	}, [screenWidth])
 
 	useEffect(() => {
+		if (typeof window === 'undefined') return
+
 		const handleMove = <T extends MouseEvent | TouchEvent>(e: any) => {
 			console.log('mouse move')
 			if (!isDragging) return

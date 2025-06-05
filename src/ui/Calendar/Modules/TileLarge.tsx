@@ -13,6 +13,7 @@ export default function TileLarge({
 	breakword = false,
 	anim,
 	isInView,
+	offset = 0,
 }: Partial<{
 	hour: string
 	text: string
@@ -25,6 +26,7 @@ export default function TileLarge({
 	breakword: boolean
 	anim?: string
 	isInView: boolean
+	offset: number
 }>) {
 	const colorMap: Record<string, any> = {
 		blue: {
@@ -63,12 +65,12 @@ export default function TileLarge({
 			y: '0',
 		},
 		left: {
-			x: '-15rem',
-			y: '-15rem',
+			x: `-${offset}px`,
+			y: `-${offset}px`,
 		},
 		right: {
-			x: '15rem',
-			y: '-15rem',
+			x: `${offset}px`,
+			y: `-${offset}px`,
 		},
 	}
 
@@ -76,6 +78,12 @@ export default function TileLarge({
 		w: 160,
 		h: 77,
 	}
+
+	const fadeStart = 200
+	const fadeEnd = 700
+
+	const opacity =
+		1 - Math.min(Math.max((offset - fadeStart) / (fadeEnd - fadeStart), 0), 1)
 
 	const animConf = anim ? animMap[anim] : null
 
@@ -91,21 +99,23 @@ export default function TileLarge({
 	return (
 		<div
 			className={cn('absolute z-10 rounded-[3.14px] p-[0.296875rem]', {
-				'anim-trans': isInView && (anim === 'left' || anim === 'right'),
-				'anim-fade-out': isInView && anim,
+				// 'anim-trans': isInView && (anim === 'left' || anim === 'right'),
+				// 'anim-fade-out': isInView && anim,
 			})}
 			style={
 				{
 					borderLeft: `2px solid ${c.border}`,
 					top: `${top}px`,
 					left: `${left}px`,
+					translate: `${animConf?.x} ${animConf?.y}`,
 					backgroundColor: c.bg,
 					color: c.color,
 					width: `${width}px`,
 					height: `${height}px`,
+					...(anim ? { opacity } : {}),
 					'--x': animConf?.x ?? '0',
 					'--y': animConf?.y ?? '0',
-					'--delay-fadeout': '500ms',
+					// '--delay-fadeout': '500ms',
 					'--delay-translate': '500ms',
 				} as React.CSSProperties
 			}

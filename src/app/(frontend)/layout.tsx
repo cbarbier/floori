@@ -13,6 +13,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import { NextIntlClientProvider } from 'next-intl'
 
 import '@/styles/app.css'
+import LoaderOverlay from '@/ui/LoaderOverlay'
 
 export default async function RootLayout({
 	children,
@@ -29,6 +30,7 @@ export default async function RootLayout({
 						<SkipToContent />
 						<Announcement />
 						<Header />
+						<LoaderOverlay />
 						<main
 							id="main-content"
 							role="main"
