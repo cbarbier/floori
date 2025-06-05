@@ -24,7 +24,7 @@ export default async function RootLayout({
 		<Root>
 			<GoogleTagManager gtmId={process.env.GTM_ID!} />
 			<GoogleAnalytics gaId={process.env.GA_ID!} />
-			<body className="bg-seashell text-ink min-h-screen pt-5 antialiased sm:pt-2">
+			<body className="bg-seashell text-ink min-h-screen overflow-x-hidden pt-5 antialiased sm:pt-2">
 				<NextIntlClientProvider>
 					<NuqsAdapter>
 						<SkipToContent />
