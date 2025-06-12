@@ -9,9 +9,14 @@ import { useScrollOffset } from '@/lib/useScrolloffset'
 
 const config = require('./configCalendarDesktop.json')
 
-export default function CalendarDesktop() {
+export default function CalendarDesktop({
+	isCentered,
+	containerRef,
+}: {
+	isCentered: boolean
+	containerRef: React.RefObject<HTMLDivElement | null>
+}) {
 	const t = useTranslations('CalendarText')
-	const { isCentered, ref } = useCenteredInView<HTMLDivElement>()
 
 	const { offset, lockScroll } = useScrollOffset({
 		onMaxReached: () => {
@@ -57,32 +62,11 @@ export default function CalendarDesktop() {
 	)
 	return (
 		<div className="wrapper mx-auto w-fit">
-			<div ref={ref} className="relative h-[543px] w-[861px]">
+			<div ref={containerRef} className="relative h-[543px] w-[861px]">
 				<div className="absolute top-0 left-0 w-[861px]">
 					<img src="/svg/calendar_desktop.svg" />
 				</div>
-
 				{buildTiles(config, t)}
-				{/* <TileDesktop
-					hour={'9:00'}
-					top={23}
-					left={58}
-					visio
-					text={'Diner cli'}
-				/>
-				<TileDesktop hour={'10:00'} top={79} left={58} text={'Dej marketing'} />
-				<TileDesktop
-					hour={'11:00'}
-					top={135}
-					left={58}
-					text={'Dej marketing'}
-				/>
-				<TileDesktop
-					hour={'10:00'}
-					top={79}
-					left={172}
-					text={'Dej marketing'}
-				/> */}
 			</div>
 		</div>
 	)

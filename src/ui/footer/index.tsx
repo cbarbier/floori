@@ -37,14 +37,17 @@ export default async function Footer() {
 				</div>
 
 				{email && (
-					<ClickToCopy
-						className="group relative max-sm:mr-6 max-sm:w-fit sm:self-center"
-						childrenWhenCopied={<VscCheck size={32} />}
-						childrenWhenHover={<VscCopy size={32} />}
-						value={email}
-					>
+					// <ClickToCopy
+					// 	className="group relative max-sm:mr-6 max-sm:w-fit sm:self-center"
+					// 	childrenWhenCopied={<VscCheck size={32} />}
+					// 	childrenWhenHover={<VscCopy size={32} />}
+					// 	value={email}
+					// >
+					// <VscMail size={32} className="" />
+					// </ClickToCopy>
+					<a href={`mailto:${email}`}>
 						<VscMail size={32} className="" />
-					</ClickToCopy>
+					</a>
 				)}
 				<Social className="max-sm:w-fit" />
 				<Navigation />

@@ -26,18 +26,10 @@ export default function FL_Founder({
 						'sm:aspect-ratio-[591/692] relative sm:w-[calc(50%-3.5625rem/2)]',
 					)}
 				>
-					<div className="absolute top-8 left-8 z-10 sm:top-[90px]">
+					<div className="absolute top-8 left-8 z-10">
 						<FadeInSection x={'-20px'} delay={'0.7s'}>
 							<Flower />
 						</FadeInSection>
-					</div>
-					<div className="absolute top-[90px] right-4 z-10">
-						<Image
-							src="/svg/flower.svg"
-							alt="little flower"
-							width={40}
-							height={40}
-						/>
 					</div>
 					{image && (
 						<ResponsiveImg

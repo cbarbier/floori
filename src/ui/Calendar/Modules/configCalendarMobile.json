@@ -8,19 +8,22 @@
 			"label": "cd20",
 			"hour": "11:00",
 			"end": "12:00",
-			"color": "red"
+			"color": "red",
+			"anim": "fade"
 		},
 		{
 			"label": "cd19",
 			"hour": "12:00",
 			"end": "13:00",
-			"color": "red"
+			"color": "red",
+			"anim": "fade"
 		},
 		{
 			"label": "cd18",
 			"hour": "13:00",
 			"end": "14:00",
-			"color": "red"
+			"color": "red",
+			"anim": "fade"
 		},
 		{
 			"label": "cd21",
@@ -43,13 +46,15 @@
 			"label": "cd23",
 			"hour": "11:15",
 			"end": "12:15",
-			"color": "red"
+			"color": "red",
+			"anim": "fade"
 		},
 		{
 			"label": "cd24",
 			"hour": "11:45",
 			"end": "12:45",
-			"color": "red"
+			"color": "red",
+			"anim": "fade"
 		},
 		{
 			"label": "cd25",

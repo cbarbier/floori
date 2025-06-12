@@ -8,12 +8,20 @@
 			"hour": "9:00",
 			"color": "blue",
 			"visio": true,
+			"duration": "0.75",
+			"half": "0"
+		},
+		{
+			"label": "cd401",
+			"hour": "9:45",
+			"color": "blue",
+			"visio": true,
 			"duration": "1",
 			"half": "0"
 		},
 		{
 			"label": "cd2",
-			"hour": "10:00",
+			"hour": "10:45",
 			"color": "blue",
 			"visio": false,
 			"duration": "1",
@@ -21,18 +29,18 @@
 		},
 		{
 			"label": "cd3",
-			"hour": "11:00",
+			"hour": "11:45",
 			"color": "blue",
 			"visio": true,
-			"duration": "1",
+			"duration": "0.75",
 			"half": "0"
 		},
 		{
 			"label": "cd4",
-			"hour": "12:00",
+			"hour": "12:30",
 			"color": "red",
 			"visio": false,
-			"duration": "2",
+			"duration": "1.5",
 			"half": "0",
 			"anim": "left"
 		},
@@ -50,8 +58,7 @@
 			"color": "orange",
 			"visio": false,
 			"duration": "1",
-			"half": "1",
-			"anim": "left"
+			"half": "1"
 		},
 		{
 			"label": "cd7",
@@ -63,6 +70,15 @@
 		},
 		{
 			"DAY": "TUESDAY"
+		},
+		{
+			"label": "cd29",
+			"hour": "9:00",
+			"color": "red",
+			"visio": true,
+			"duration": "1",
+			"half": "0",
+			"anim": "left"
 		},
 		{
 			"label": "cd8",
@@ -88,6 +104,15 @@
 			"visio": true,
 			"duration": "1",
 			"half": "0"
+		},
+		{
+			"label": "cd31",
+			"hour": "14:00",
+			"color": "yellow",
+			"visio": true,
+			"duration": "0.75",
+			"half": "0",
+			"anim": "left"
 		},
 		{
 			"label": "cd11",
@@ -146,8 +171,17 @@
 			"hour": "14:00",
 			"color": "blue",
 			"visio": true,
-			"duration": "2",
+			"duration": "1.5",
 			"half": "0"
+		},
+		{
+			"label": "cd30",
+			"hour": "15:30",
+			"color": "red",
+			"visio": true,
+			"duration": "1.5",
+			"half": "0",
+			"anim": "left"
 		},
 		{
 			"DAY": "THURSDAY"
@@ -186,6 +220,15 @@
 			"visio": true,
 			"duration": "1",
 			"half": "0"
+		},
+		{
+			"label": "cd32",
+			"hour": "16:15",
+			"color": "red",
+			"visio": true,
+			"duration": "1.5",
+			"half": "0",
+			"anim": "right"
 		},
 		{
 			"DAY": "FRIDAY"
@@ -230,8 +273,7 @@
 			"color": "yellow",
 			"visio": true,
 			"duration": "1",
-			"half": "0",
-			"anim": "right"
+			"half": "0"
 		},
 		{
 			"label": "cd27",
@@ -239,8 +281,7 @@
 			"color": "yellow",
 			"visio": true,
 			"duration": "1",
-			"half": "2",
-			"anim": "right"
+			"half": "2"
 		},
 		{
 			"label": "cd28",

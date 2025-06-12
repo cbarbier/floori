@@ -11,12 +11,14 @@ export default function FL_Hero({
 	subtitle,
 	cta,
 	calendar,
+	calendartitle,
 	...props
 }: Partial<{
 	title: any
 	subtitle: any
 	cta: Sanity.CTA
 	calendar: boolean
+	calendartitle?: any
 }> &
 	Sanity.Module) {
 	return (
@@ -41,6 +43,11 @@ export default function FL_Hero({
 							ctas={[cta]}
 							className={cn('mx-auto w-fit justify-center pt-8')}
 						/>
+					)}
+					{calendartitle && (
+						<div className="font-cdis pt-8 text-center">
+							<CustomPortableText value={calendartitle} />
+						</div>
 					)}
 				</div>
 			</div>

@@ -28,7 +28,10 @@ export default function FL_Definition({
 	Sanity.Module) {
 	return (
 		<section className={cn('bg-crab text-seashell')} {...moduleProps(props)}>
-			<div className="section mx-auto flex w-fit flex-col px-0">
+			<div
+				id="section_definition"
+				className="section mx-auto flex w-fit flex-col px-0"
+			>
 				<div className={cn('relative mb-[1.9375rem] text-center')}>
 					<CustomPortableText
 						className="font-cdis max-w-screen-lg text-[1.375rem] font-bold sm:text-[1.75rem]"

@@ -3,10 +3,11 @@
 		"title": "calendrier"
 	},
 	"CalendarText": {
-		"cd1": "Weekly équipe globale",
+		"cd1": "Weekly globale",
 		"cd2": "Team Produit Kickoff weekly",
 		"cd3": "Point Financier",
-		"cd4": "Arrivée Sophie : onboarding + déjeuner équipe Tech",
+		"cd4": "Onboarding Sophie + Welcome lunch Equipe Tech",
+		"cd401": "prépa Onboarding Sophie",
 		"cd5": "Design Review",
 		"cd6": "1:1 avec JF",
 		"cd7": "Entretien retours clients",
@@ -31,6 +32,11 @@
 		"cd26": "1:1 avec Eva",
 		"cd27": "1:1 avec Mat",
 		"cd28": "Weekly Sales",
+
+		"cd29": "Benchmark cartes titre-resto",
+		"cd30": "Définition objectifs Sales",
+		"cd31": "Budget Augment’ 2026",
+		"cd32": "Renouvellement période d’essai",
 
 		"cmd1": "Jeudi — 25 SEPT.",
 		"cmd2": "Vendredi — 26 SEPT."

@@ -31,6 +31,7 @@ export default defineType({
 			type: 'cta',
 			group: 'content',
 		}),
+		richtextBuilder('calendartitle', 'content', 'title of calendar'),
 		defineField({
 			name: 'calendar',
 			type: 'boolean',

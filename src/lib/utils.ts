@@ -52,3 +52,8 @@ export function countDecimals(value: number): number {
 	const exp = parseInt(exponent, 10)
 	return Math.max(0, decimals - exp)
 }
+
+export function scrollToSelector(selector: string) {
+	if (typeof window !== 'undefined')
+		document.querySelector(selector)?.scrollIntoView({ behavior: 'smooth' })
+}

@@ -9,9 +9,14 @@ import { useCallback } from 'react'
 
 const config = require('./configCalendarMobile.json')
 
-export default function CalendarMobile() {
+export default function CalendarMobile({
+	isInView,
+	containerRef,
+}: {
+	isInView: boolean
+	containerRef: React.RefObject<HTMLDivElement | null>
+}) {
 	const t = useTranslations('CalendarText')
-	const { isInView, ref } = useInView(1)
 
 	const buildTiles = useCallback(
 		(config: any, translate: any) => {
@@ -49,7 +54,7 @@ export default function CalendarMobile() {
 	)
 	return (
 		<div className="wrapper anim-fade-to-b2 mx-auto w-fit">
-			<div ref={ref} className={cn('relative h-[575px] w-[320px]')}>
+			<div ref={containerRef} className={cn('relative h-[575px] w-[320px]')}>
 				<div className={cn(css.calendar)}>{buildTiles(config, t)}</div>
 			</div>
 		</div>

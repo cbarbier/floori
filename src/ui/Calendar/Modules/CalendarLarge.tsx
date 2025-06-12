@@ -16,10 +16,14 @@ export type DebugCounter = {
 	top: number
 }
 
-export default function CalendarLarge() {
+export default function CalendarLarge({
+	isCentered,
+	containerRef,
+}: {
+	isCentered: boolean
+	containerRef: React.RefObject<HTMLDivElement | null>
+}) {
 	const t = useTranslations('CalendarText')
-
-	const { isCentered, ref } = useCenteredInView<HTMLDivElement>()
 
 	const { offset, lockScroll } = useScrollOffset({
 		onMaxReached: () => {
@@ -65,7 +69,7 @@ export default function CalendarLarge() {
 	)
 	return (
 		<div className="wrapper mx-auto w-fit">
-			<div ref={ref} className="relative h-[781px] w-[1240px]">
+			<div ref={containerRef} className="relative h-[781px] w-[1240px]">
 				<div className="absolute top-0 left-0 w-[1240px]">
 					<img src="/svg/calendar_large.svg" />
 				</div>

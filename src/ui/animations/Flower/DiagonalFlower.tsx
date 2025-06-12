@@ -1,39 +1,67 @@
 'use client'
 
-import { PortableTextMarkComponentProps } from 'next-sanity'
+import React, { useRef, useEffect } from 'react'
 import { useInView } from '@/lib/useInView'
-import { cn, scrollToSelector } from '@/lib/utils'
-import css from '@/ui/animations/FadeInSection/fadeinsection.module.css'
 import { useIsMobile } from '@/lib/useIsMobile'
+import Flower from '@/assets/flower'
+import { cn } from '@/lib/utils'
 
-const AsterixFlower = ({ children }: PortableTextMarkComponentProps<any>) => {
+const DiagonalFlower = ({
+	containerRef,
+}: {
+	containerRef: React.RefObject<HTMLDivElement | null>
+}) => {
 	const isMobile = useIsMobile()
-	const { isInView, ref } = useInView(1)
+	const { isInView, ref: flowerRef } = useInView(1)
+
+	useEffect(() => {
+		if (!containerRef?.current) {
+			return
+		}
+		let startTime: number | null = null
+		const duration = 3000
+
+		const animate = (time: number) => {
+			if (!startTime) startTime = time
+			const elapsed = time - startTime
+
+			if (elapsed > duration) return
+
+			const t = (elapsed % duration) / duration
+
+			const container = containerRef.current
+			const flower = flowerRef.current
+
+			if (container && flower) {
+				const width = container.offsetWidth
+				const height = container.offsetHeight
+
+				const x = t * width
+				const baseY = t * height
+				const amplitude = 80
+				const y = baseY - Math.cos(t * 4 * Math.PI) * amplitude
+
+				console.log(flower.style.left, x, flower.style.top, y)
+				flower.style.left = `${x}px`
+				flower.style.top = `${y}px`
+			}
+
+			requestAnimationFrame(animate)
+		}
+
+		requestAnimationFrame(animate)
+	}, [])
 
 	return (
-		<span
-			onClick={() => scrollToSelector('#section_definition')}
-			ref={ref}
-			className="relative inline-block hover:cursor-pointer max-sm:mr-4"
-		>
-			{children}
+		<div ref={flowerRef} className="absolute top-0 left-0 z-100">
 			<svg
 				width={isMobile ? 32 : 50}
 				height={isMobile ? 30 : 47}
 				viewBox="0 0 50 47"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
-				style={
-					{
-						'--x': '32px',
-						'--y': '0px',
-					} as React.CSSProperties
-				}
-				className={cn(
-					'absolute -top-4 left-full',
-					css.fadeinsection,
-					isInView ? css.isvisible : null,
-				)}
+				style={{} as React.CSSProperties}
+				className={cn('')}
 			>
 				<g filter="url(#filter0_d_223_3153)">
 					<path
@@ -83,8 +111,8 @@ const AsterixFlower = ({ children }: PortableTextMarkComponentProps<any>) => {
 					</filter>
 				</defs>
 			</svg>
-		</span>
+		</div>
 	)
 }
 
-export default AsterixFlower
+export default DiagonalFlower

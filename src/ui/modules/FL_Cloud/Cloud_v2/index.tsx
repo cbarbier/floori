@@ -51,6 +51,7 @@ export default function Cloud_v2({
 	useEffect(() => {
 		autoScrollRef.current = setInterval(() => {
 			console.log('interval slide right')
+			slideRight()
 		}, 3000)
 
 		return () => {

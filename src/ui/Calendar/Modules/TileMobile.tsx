@@ -54,7 +54,7 @@ export default function TileMobile({
 		<div className={cn('wrapper w-full py-3', css.tile)}>
 			<div
 				className={cn('inner flex h-[1.875rem] w-full justify-start', {
-					'anim-fade-out': color !== 'blue' && isInView,
+					'anim-fade-out': anim && isInView,
 				})}
 				style={
 					{

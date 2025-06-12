@@ -4,9 +4,10 @@ import { PiFlower } from 'react-icons/pi'
 import { FaUnderline, FaXRay } from 'react-icons/fa6'
 import { BsFlower2 } from 'react-icons/bs'
 
-export default (name: string, group: string) =>
+export default (name: string, group: string, title?: string) =>
 	defineField({
 		name,
+		title: title ?? name,
 		type: 'array',
 		of: [
 			{
