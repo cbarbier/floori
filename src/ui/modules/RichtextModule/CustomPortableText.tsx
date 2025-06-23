@@ -1,7 +1,6 @@
 'use client'
 
 import { cn } from '@/lib/utils'
-import { PortableText } from 'next-sanity'
 import CardUnderline from './CardUnderline'
 import HeroUnderline from './HeroUnderline'
 import AsterixFlower from './AsterixFlower'
@@ -9,6 +8,7 @@ import { useInView } from '@/lib/useInView'
 import Rays from './Rays'
 import DoubleFlower from './DoubleFlower'
 import DefUnderline from './DefUnderline'
+import { PortableText } from 'next-sanity'
 
 export default function CustomPortableText({
 	value,
@@ -17,7 +17,6 @@ export default function CustomPortableText({
 	const { ref, isInView } = useInView(1)
 	return (
 		<div className={cn('mx-auto', className)}>
-			<div ref={ref} className="muck h-2"></div>
 			<PortableText
 				value={value}
 				components={{
@@ -30,13 +29,13 @@ export default function CustomPortableText({
 								children
 							)
 						},
-						strong: ({ children }) => (
-							<span className="font-bold">{children}</span>
-						),
 						source: ({ children }) => (
 							<span style={{ color: 'rgba(255, 255, 255, 0.6)' }}>
 								{children}
 							</span>
+						),
+						strong: ({ children }) => (
+							<span className="font-bold">{children}</span>
 						),
 						doubleflower: DoubleFlower,
 						asterixflower: AsterixFlower,
@@ -57,6 +56,7 @@ export default function CustomPortableText({
 							<ol className="list-decimal pl-6">{children}</ol>
 						),
 					},
+					listItem: ({ children }) => <li className="">{children}</li>,
 					block: {
 						h1: ({ children }) => <h1 className="h1">{children}</h1>,
 						h2: ({ children }) => <h2 className="h2">{children}</h2>,

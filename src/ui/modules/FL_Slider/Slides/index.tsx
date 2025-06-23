@@ -213,40 +213,41 @@ export default function Slides({
 		<div
 			className={cn('relative grid', {
 				'grid-cols-[2.5rem_auto_2.5rem] gap-4': !isMobile,
+				'grid-cols-[1.5rem_auto_1.5rem] gap-2': isMobile,
 			})}
 		>
-			{!isMobile && (
-				<button
-					onClick={slideLeft}
-					className={cn(
-						{
-							// 'cursor-not-allowed': !currentIndex,
-						},
-						'aspect-square w-[2.5rem] self-center rounded-full text-white disabled:bg-[#cedced]',
-					)}
-					// disabled={!currentIndex}
+			<button
+				onClick={slideLeft}
+				className={cn(
+					'aspect-square w-[2.5rem] self-center rounded-full text-white disabled:bg-[#cedced]',
+					isMobile ? 'w-[1.5rem]' : 'w-[2.5rem]',
+
+					{
+						// 'cursor-not-allowed': !currentIndex,
+					},
+				)}
+				// disabled={!currentIndex}
+			>
+				<svg
+					fill="#85aff9"
+					height="42px"
+					width={isMobile ? '24px' : '42px'}
+					version="1.1"
+					id="Icons"
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 32 32"
 				>
-					<svg
-						fill="#85aff9"
-						height="42px"
-						width="42px"
-						version="1.1"
-						id="Icons"
-						xmlns="http://www.w3.org/2000/svg"
-						viewBox="0 0 32 32"
-					>
-						<path
-							d="M21,2H11c-5,0-9,4-9,9v10c0,5,4,9,9,9h10c5,0,9-4,9-9V11C30,6,26,2,21,2z M18.7,20.3c0.4,0.4,0.4,1,0,1.4
+					<path
+						d="M21,2H11c-5,0-9,4-9,9v10c0,5,4,9,9,9h10c5,0,9-4,9-9V11C30,6,26,2,21,2z M18.7,20.3c0.4,0.4,0.4,1,0,1.4
 	C18.5,21.9,18.3,22,18,22s-0.5-0.1-0.7-0.3l-5-5c-0.4-0.4-0.4-1,0-1.4l5-5c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4L14.4,16L18.7,20.3z"
-						/>
-					</svg>
-				</button>
-			)}
+					/>
+				</svg>
+			</button>
 			<div
 				ref={sliderRef}
-				onMouseDown={handleStart}
-				onTouchStart={handleStart}
-				className="relative max-w-full overflow-x-hidden"
+				// onMouseDown={handleStart}
+				// onTouchStart={handleStart}
+				className="relative max-w-[calc(100vw-3rem)] overflow-x-hidden sm:max-w-full"
 			>
 				{/* Fade Left */}
 				{/* <div className="pointer-events-none absolute top-0 left-0 z-10 h-full w-16 bg-gradient-to-r from-white/80 to-transparent" /> */}
@@ -277,7 +278,7 @@ export default function Slides({
 						return (
 							<div
 								className={cn(
-									'slide flex aspect-[0.95] w-[min(calc(100vw-1rem),24.875rem)] items-center justify-center',
+									'slide flex aspect-[0.95] w-[min(calc(100vw-4rem),24.875rem)] items-center justify-center',
 									{
 										'border-vistablue': currentIndex === i,
 									},
@@ -294,33 +295,32 @@ export default function Slides({
 					})}
 				</div>
 			</div>
-			{!isMobile && (
-				<button
-					onClick={slideRight}
-					className={cn(
-						{
-							// 'cursor-not-allowed': currentIndex == phrases.length - 1,
-						},
-						'aspect-[0.9] w-[2.5rem] rotate-180 self-center rounded-full text-white disabled:bg-[#cedced]',
-					)}
-					// disabled={currentIndex == phrases.length - 1}
+			<button
+				onClick={slideRight}
+				className={cn(
+					'aspect-[0.9] rotate-180 self-center rounded-full text-white disabled:bg-[#cedced]',
+					isMobile ? 'w-[1.5rem]' : 'w-[2.5rem]',
+					{
+						// 'cursor-not-allowed': currentIndex == phrases.length - 1,
+					},
+				)}
+				// disabled={currentIndex == phrases.length - 1}
+			>
+				<svg
+					fill="#85aff9"
+					height="42px"
+					width={isMobile ? '24px' : '42px'}
+					version="1.1"
+					id="Icons"
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 32 32"
 				>
-					<svg
-						fill="#85aff9"
-						height="42px"
-						width="42px"
-						version="1.1"
-						id="Icons"
-						xmlns="http://www.w3.org/2000/svg"
-						viewBox="0 0 32 32"
-					>
-						<path
-							d="M21,2H11c-5,0-9,4-9,9v10c0,5,4,9,9,9h10c5,0,9-4,9-9V11C30,6,26,2,21,2z M18.7,20.3c0.4,0.4,0.4,1,0,1.4
+					<path
+						d="M21,2H11c-5,0-9,4-9,9v10c0,5,4,9,9,9h10c5,0,9-4,9-9V11C30,6,26,2,21,2z M18.7,20.3c0.4,0.4,0.4,1,0,1.4
 	C18.5,21.9,18.3,22,18,22s-0.5-0.1-0.7-0.3l-5-5c-0.4-0.4-0.4-1,0-1.4l5-5c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4L14.4,16L18.7,20.3z"
-						/>
-					</svg>
-				</button>
-			)}
+					/>
+				</svg>
+			</button>
 		</div>
 	)
 }

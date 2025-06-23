@@ -10,6 +10,7 @@ export default function FL_Hero({
 	title,
 	subtitle,
 	cta,
+	ctasub,
 	calendar,
 	calendartitle,
 	...props
@@ -17,6 +18,7 @@ export default function FL_Hero({
 	title: any
 	subtitle: any
 	cta: Sanity.CTA
+	ctasub: Sanity.CTA
 	calendar: boolean
 	calendartitle?: any
 }> &
@@ -52,6 +54,12 @@ export default function FL_Hero({
 				</div>
 			</div>
 			{calendar && <Calendar />}
+			{ctasub && (
+				<CTAList
+					ctas={[ctasub]}
+					className={cn('mx-auto w-fit justify-center pt-8')}
+				/>
+			)}
 		</section>
 	)
 }

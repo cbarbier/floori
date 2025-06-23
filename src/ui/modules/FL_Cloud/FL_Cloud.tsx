@@ -43,7 +43,7 @@ export default function FL_Cloud({
 				<div
 					className={cn('richtext m-automax-w-xl relative isolate text-center')}
 				>
-					<FadeInSection delay="2.5s">
+					<FadeInSection delay="2s">
 						<div className="font-cdis text-butterschotch mb-[2.875rem] max-w-screen overflow-x-hidden text-[1.5rem] sm:mb-[4.375rem]">
 							<CustomPortableText value={subtitle} />
 						</div>

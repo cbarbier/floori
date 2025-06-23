@@ -66,7 +66,7 @@ export default function Cloud_v2({
 			userInterrupted.current = true
 			if (autoScrollRef.current) clearInterval(autoScrollRef.current)
 		}
-		handleNext()
+		handlePrev()
 	}
 	const slideRight = () => {
 		if (transition) return
@@ -75,7 +75,7 @@ export default function Cloud_v2({
 			userInterrupted.current = true
 			if (autoScrollRef.current) clearInterval(autoScrollRef.current)
 		}
-		handlePrev()
+		handleNext()
 	}
 
 	console.log('currentIndex', currentIndex)

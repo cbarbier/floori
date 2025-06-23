@@ -38,6 +38,12 @@ export default defineType({
 			group: 'options',
 			initialValue: true,
 		}),
+		defineField({
+			name: 'ctasub',
+			title: 'Call-to-action sub Calendar',
+			type: 'cta',
+			group: 'content',
+		}),
 	],
 	preview: {
 		select: {

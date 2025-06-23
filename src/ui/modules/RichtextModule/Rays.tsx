@@ -25,14 +25,7 @@ const Rays = ({
 				className={cn('absolute top-[40%] left-[105%] sm:top-[60%]')}
 			>
 				<mask id="draw-mask2">
-					<rect
-						x="0"
-						y="0"
-						width="0"
-						height="50"
-						fill="white"
-						id="mask-rect2"
-					/>
+					<rect x="0" y="0" width="0" height="50" fill="white" id="mask-ray" />
 				</mask>
 				<path
 					fillRule="evenodd"

@@ -1,8 +1,6 @@
 import moduleProps from '@/lib/moduleProps'
 import { cn } from '@/lib/utils'
 import CustomPortableText from '../RichtextModule/CustomPortableText'
-import CloudArrow from '../FL_Cloud/CloudArrow'
-import Cloud_shape from '../FL_Cloud/Cloud_shape'
 import Slides from './Slides'
 
 export default function FL_Slider({
